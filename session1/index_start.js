@@ -3,10 +3,22 @@
 // ex. reverseString('hello') === 'olleh'
 
 function reverseString(str) {
-  return 'Let\'s Start'
+  // Solution 1,
+  // return str.split('').reverse().join()
+
+ 
+
+  //--------------------- Another solution with ForLoop----------
+  let revString = '';
+  for (let char of str){
+    revString = char+revString  
+  }
+  return revString;
 }
-
-
+const a = [1, 24, 5, 6]
+  const b = ("hello")
+  console.log(reverseString(b))
+//------------------------------------------------
 
 // CHALLENGE 2: VALIDATE A PALINDROME
 // Return true if palindrome and false if not
