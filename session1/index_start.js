@@ -91,6 +91,7 @@ function maxCharacter(str) {
    
     // Create  Empty String and MaxNum =  0    
     if (emptyObj[char] > maxNum) {
+      
       maxNum = emptyObj[char];
       maxChar = char;   
     }
@@ -102,13 +103,33 @@ console.log(maxCharacter('javascrijpty'))
 // ---------------------------------------------------------------------
 
 // CHALLENGE 6: FIZZBUZZ
-// Write a program that prints all the numbers from 1 to 100. For multiples of 3, instead of the number, print "Fizz", for multiples of 5 print "Buzz". For numbers which are multiples of both 3 and 5, print "FizzBuzz".
-function fizzBuzz() {}
+// Write a program that prints all the numbers from 1 to 100. 
+// For multiples of 3, instead of the number, print "Fizz", 
+// for multiples of 5 print "Buzz".For numbers which are multiples of both 3 and 5, print "FizzBuzz".
+function fizzBuzz(n) {
 
+  if (n < 1) return 1
+
+  for (let index = 1; index < n; index++) {
+    if (index % 3 === 0) {
+      console.log("Fizz")
+    } else if (index % 5 === 0) {
+      console.log("Buzz")
+    } else if (index % 3 === 0 && index % 5 === 0) {
+       // You can use 15 here aswell. 
+      console.log("FizzBuzz")
+    } else {
+      console.log(index )
+    }
+  }
+ 
+  
+}
+ 
 
 
 // Call Function
-const output = reverseString('hello');
+const output = fizzBuzz(100);
 
 console.log(output);
 
