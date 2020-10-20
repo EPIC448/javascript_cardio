@@ -24,23 +24,51 @@ const a = [1, 24, 5, 6]
 // Return true if palindrome and false if not
 // ex. isPalindrome('racecar') === 'true', isPalindrome('hello') == false
 
-function isPalindrome(str) {}
+function isPalindrome(str) {
+   let reverseString = str.split('').reverse().join('') // You want it to return a String
+  console.log(reverseString)
+     
+  if (reverseString === str) {
+     return true
+  } else 
+    return false
+   
+}
+
+console.log(isPalindrome("racecarsd"))
 
 
-
+// ----------------------------------
 // CHALLENGE 3: REVERSE AN INTEGER
 // Return an integer in reverse
 // ex. reverseInt(521) === 125
 
-function reverseInt(int) {}
+function reverseInt(int) {
+
+  let revInt = int.toString('').split('').reverse().join('');
+// Becasue Int, Turn into a string, Then split
+  return parseInt(revInt) * Math.sign(int)
+  //return back to Interger/ and include the Sign 
+}
+let testInt = [-52156546]
+console.log(reverseInt(testInt))
 
 
+//---------------------------------------------------------------------------------------
 
 // CHALLENGE 4: CAPITALIZE LETTERS
 // Return a string with the first letter of every word capitalized
 // ex. capitalizeLetters('i love javascript') === 'I Love Javascript'
-function capitalizeLetters(str) {}
+function capitalizeLetters(str) {
 
+  return str.toLowerCase().split(' ').map(function (word) {
+    return word[0].toUpperCase() + word.substring(1)  // using substring attache the remindr doe the Word
+
+  })
+    
+}
+
+console.log(capitalizeLetters("i love Bodybuilding so much"))
 
 
 // CHALLENGE 5: MAX CHARACTER
