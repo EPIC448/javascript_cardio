@@ -60,11 +60,10 @@ console.log(reverseInt(testInt))
 // Return a string with the first letter of every word capitalized
 // ex. capitalizeLetters('i love javascript') === 'I Love Javascript'
 function capitalizeLetters(str) {
-
+  
   return str.toLowerCase().split(' ').map(function (word) {
     return word[0].toUpperCase() + word.substring(1)  // using substring attache the remindr doe the Word
-
-  })
+  }).join(' ')
     
 }
 
@@ -74,9 +73,33 @@ console.log(capitalizeLetters("i love Bodybuilding so much"))
 // CHALLENGE 5: MAX CHARACTER
 // Return the character that is most common in a string
 // ex. maxCharacter('javascript') == 'a'
-function maxCharacter(str) {}
+function maxCharacter(str) {
+   // make a charter map =>   f:1, u:1, n:2, y:1
+  let emptyObj = {};
+  for (const char of str) {
+    (!emptyObj[char]) ? emptyObj[char] = 1 : emptyObj[char]++
+    // return emptyObj we had to Mute this SO to use in other varible 
+    
+    }
+          // This is an objec now.
 
+  let maxNum = 0;
+  let maxChar = "";
 
+  //  /iterate over the object
+  for (let char in emptyObj) {
+   
+    // Create  Empty String and MaxNum =  0    
+    if (emptyObj[char] > maxNum) {
+      maxNum = emptyObj[char];
+      maxChar = char;   
+    }
+  }
+  return maxChar   //=> J
+}
+
+console.log(maxCharacter('javascrijpty'))
+// ---------------------------------------------------------------------
 
 // CHALLENGE 6: FIZZBUZZ
 // Write a program that prints all the numbers from 1 to 100. For multiples of 3, instead of the number, print "Fizz", for multiples of 5 print "Buzz". For numbers which are multiples of both 3 and 5, print "FizzBuzz".
@@ -88,3 +111,5 @@ function fizzBuzz() {}
 const output = reverseString('hello');
 
 console.log(output);
+
+
