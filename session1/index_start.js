@@ -24,18 +24,30 @@ const a = [1, 24, 5, 6]
 // Return true if palindrome and false if not
 // ex. isPalindrome('racecar') === 'true', isPalindrome('hello') == false
 
-function isPalindrome(str) {
-   let reverseString = str.split('').reverse().join('') // You want it to return a String
-  console.log(reverseString)
+ //------Solution 1------------ working
+// function isPalindrome(str) {
+//    let reverseString = str.split('').reverse().join('') // You want it to return a String
+//   console.log(reverseString)
      
-  if (reverseString === str) {
-     return true
-  } else 
-    return false
+//   if (reverseString === str) {
+//      return true
+//   } else 
+//     return false
    
-}
+// }
 
-console.log(isPalindrome("racecarsd"))
+// console.log(isPalindrome("racecarsd"))
+
+//-----------solution 2------- Working
+const isPalindrome=(str) => {
+  //Create new varible &reverse the string..... split, reverse, join
+  let reverseStr = str.split('').reverse().join('')
+  // Compre reverese string to  orginal string . return true or false
+  
+  return (reverseStr  === str ?  true :  false)
+ }
+
+console.log(isPalindrome("bed")) // => true
 
 
 // ----------------------------------

@@ -112,7 +112,7 @@ function isAnagram(str1, str2) {
 // Z should turn to A
 // ex. 'hello there' === 'Ifmmp UIfsf'
 
-//---------------------------------------------------------------------
+
 function letterChanges(str) {
 
   // create new String with regular expression to ..  [gi] means Global case insensitve 
