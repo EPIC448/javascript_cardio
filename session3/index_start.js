@@ -2,33 +2,68 @@
 // Return a sum of all parameters entered regardless of the amount of numbers - NO ARRAYS
 // ex. addAll(2,5,6,7) === 20
 
-function addAll(...rest) {
-     //using rest oprator. 
-    let total = 0;
-    rest.forEach(num => {
-        total += num;
-    });
-    return total;
-}
-console.log(addAll(2,5,6,3,4))
+// function addAll(...rest) {
+//      //using rest oprator. 
+//     let total = 0;
+//     rest.forEach(num => {
+//         total += num;
+//     });
+//     return total;
+// }
+
+
 // ---------------------------------------------------
 // CHALLENGE 2: SUM ALL PRIMES
-// Pass in a number to loop up to and add all of the prime numbers. A prime number is a whole number greater than 1 whose only factors are 1 and itself
+// Pass in a number to loop up to and add all of the prime numbers. 
+//A prime number is a whole number greater than 1 whose only factors are 1 and itself
 // ex. sumAllPrimes(10) == 17
+//prime number can only by mutiply 1 or itself
 
-function sumAllPrimes() {}
+function sumAllPrimes(num) {
 
+    let total = 0
+    //Note: We Start from 2 because the num most be higher < 2
+    // Step2
+    const checkForPrime = (i) => {
+        
+        for (let j = 2; j < i; j++){
+            if (i % j === 0) {
+                return false
+            }
+        }
+        return true
+    }
+
+    // step 1
+    
+    for (let index = 2; index <= num; index++) {
+      
+        if (checkForPrime(index)) {
+            
+           total += index
+            
+        }
+    }
+   return total
+  }
+
+//--------------------------------------------------------------------
 // CHALLENGE 3: SEEK & DESTROY
-// Remove from the array whatever is in the following arguments. Return the leftover numbers in an array
-// ex. seekAndDestroy([2, 3, 4, 6, 6, 'hello'], 2, 6) == [3, 4, 'hello']
-// ---------------------------------------------------
-function seekAndDestroy() {}
-
-// CHALLENGE 4: SORT BY HEIGHT
-// Some people are standing in a row in a park. There are trees between them which cannot be moved. Your task is to rearrange the people by their heights in a non-descending order without moving the trees.
 // ex.
 // a = [-1, 150, 190, 170, -1, -1, 160, 180]
 // sortByHeight(a) == [-1, 150, 160, 170, -1, -1, 180, 190]
+
+//  learn how we use ...rest, filter and includes 
+const seekAndDestroy = (arr, ...rest) => {
+    // Filter only return want is "True" discard the rest
+    // Note If i want it to inlude----  return arr.filter(val =>rest.includes(val))
+    return arr.filter(val =>!rest.includes(val))
+     
+ }
+console.log(seekAndDestroy([2,5,3,1,34, 'hello'], 2,5))
+
+
+//---------------------------------------------------------------------
 
 function sortByHeight() {}
 
