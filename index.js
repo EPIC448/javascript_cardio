@@ -199,6 +199,12 @@ const companies = [
 // ------------ ENd of Higher Order Function ---------------------
 
 
+
+
+
+
+
+
   //----------------sort-----------Sort company by start year - end year----------------
 
 const sortedCompanies = companies.sort(function (c1, c2) {
@@ -241,11 +247,99 @@ let orderAge = ages.sort(function (a, b) {
 //--------------- End Of ForEach--------------------
 
 
-//for..in
+// ------------- Other Methods --------------
+
+
+
+
+
+
+let teams = { name: "alex", color: "red", city: "NewYork" }
+let arr = [3, 2, 3, 4, 6]
+//array.foo = 'Test Hello'
+  
+//----------------------for..in    ...... Work Strings
+  let emptyString = ''
+    
+  for (const key in teams) {
+      emptyString = teams[key]
+    
+   // console.log(emptyString)
+
+  }
+
   // for...of
-  //spread
-  //slice..
-  // ..
+const helperFunc = (arr) => {
+  let emptyNum = 0
+  for (const i of arr) {
+    emptyNum += i   // emptyNum = emptyNum + 1
+  }
+  return emptyNum
+}
+
+console.log(helperFunc(arr))   // => 18
+
+
+  //------------------...spread----------------------------
+ let firstArrayBall = ["jumpBall", "Football", 'BaseBall ']
+let secondArrayThings = ['card', 'office', 'spon']
+let numArray = [3, 4, 2, 1]
+ 
+ // USed for  Add element of exisiting array into another array... Works with strings and digits
+    let thirdArray = ['card', 'office', ...firstArrayBall, 'spon']
+ // console.log(thirdArray)   //=> [ 'card', 'office', 'jumpBall', 'Football', 'BaseBall ', 'spon' ]
+
+
+//------ pass element of an array as arguments
+  // Only add up to what is allowed in the arrguments. 
+     const add2 =(x, y,a) => { console.log( x + y + a)}   // => 9
+       add2(...numArray)
+  
+
+
+//------------ concatenate arrays
+  let concatArr = [...firstArrayBall, ...secondArrayThings]
+//console.log(concatArr)
+  // => [ 'jumpBall', 'Football', 'BaseBall ', 'card', 'office', 'spon' ]
+
+//---- copy array  into another values.
+let copiedArr = [...firstArrayBall]
+   // console.log(copiedArr)    //=>  [ 'jumpBall', 'Football', 'BaseBall ' ] 
+  //-------------- End of Spread -------------------
+
+
+
+  //--------------- ... rest operator-----------------, 
+     // Does not work with strings.
+const firstMutiply = (arg1, ...agr2) => {
+    // Note .. arg1 - 1st numb in the Array  (2),  ..Rest is in Arg2 (1,2,3)
+  return agr2.map(function(element){return arg1 * element})
+}
+ let testArr = firstMutiply(2,1,"strings",2,3, )
+// console.log(testArr)    //=> [ 2, NaN, 4, 6 ]
+  // --------------End of Rest Opereator-----------------
+
+
+
+
+  let DummyTeams = ['WAter', 'earth', 'wind' ]
+let DummyArr = [3, 2, 3, 4, 6]
+
+  //-------------slice-------------..
+   // Works mostly with arrays, 
+   
+const sliceTeam = DummyTeams.slice(0, 3)
+ 
+//console.log(sliceTeam)  //=> [ 'WAter', 'earth', 'wind' ] 
+  
+const sliceArr = DummyArr.slice(1,4)
+console.log(sliceArr)   // => [ 2, 3, 4 ]
+
+
+
+
+
+
   // -------- End of Combined Methods--------------------
 
 
