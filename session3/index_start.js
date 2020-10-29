@@ -23,6 +23,7 @@ function sumAllPrimes(num) {
 
     let total = 0
     //Note: We Start from 2 because the num most be higher < 2
+    
     // Step2
     const checkForPrime = (i) => {
         
