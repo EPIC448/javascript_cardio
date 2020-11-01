@@ -61,6 +61,7 @@ function flattenArray(arrays) {
 
   // Solution 1
     /// all on Single line....  console.log(arrays.reduce((a,b) => a.concat(b)))
+  
   // return arrays.reduce(function (a, b) {
   //   return a.concat(b)
   // })

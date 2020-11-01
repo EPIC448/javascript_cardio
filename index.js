@@ -72,7 +72,7 @@ const companies = [
                   */
                 
 
-                  //--------------------Get companies that Start in the 80s
+                  //--------------------Get companies that Start in the 80s--------
               /// Note: filter can take an CALLBACK, INDEX,ARRAY
               /*
               const eightyComp = companies.filter(function (company, index, array) {
@@ -224,7 +224,7 @@ let orderAge = ages.sort(function (a, b) {
 
   //-------------------End of SORT----------------
 
- //onsole.log(companies)
+ //console.log(companies)
 
   // for (let i = 0; i < companies.length; i++) {
   //   const element = companies[i];
@@ -264,7 +264,7 @@ let arr = [3, 2, 3, 4, 6]
   for (const key in teams) {
       emptyString = teams[key]
     
-   // console.log(emptyString)
+    console.log(emptyString)
 
   }
 
@@ -277,7 +277,7 @@ const helperFunc = (arr) => {
   return emptyNum
 }
 
-console.log(helperFunc(arr))   // => 18
+// console.log(helperFunc(arr))   // => 18
 
 
   //------------------...spread----------------------------
@@ -292,7 +292,8 @@ let numArray = [3, 4, 2, 1]
 
 //------ pass element of an array as arguments
   // Only add up to what is allowed in the arrguments. 
-     const add2 =(x, y,a) => { console.log( x + y + a)}   // => 9
+const add2 = (x, y, a) => {  //console.log( x + y + a) 
+ }   // => 9
        add2(...numArray)
   
 
@@ -333,7 +334,7 @@ const sliceTeam = DummyTeams.slice(0, 3)
 //console.log(sliceTeam)  //=> [ 'WAter', 'earth', 'wind' ] 
   
 const sliceArr = DummyArr.slice(1,4)
-console.log(sliceArr)   // => [ 2, 3, 4 ]
+////console.log(sliceArr)   // => [ 2, 3, 4 ]
 
 
 
@@ -348,3 +349,14 @@ console.log(sliceArr)   // => [ 2, 3, 4 ]
 
 // greeting.lang = 'English'
 // console.log(greeting.lang )
+
+
+const some = [ "alex",  "red", "NewYork" , "ass"]
+ let num = [2,1,3,4,5]
+const checkSlice = (arr) => { return arr.slice(3, 4) }
+ 
+// console.log(checkSlice(some))
+
+for (const cons of object) {
+  
+}
