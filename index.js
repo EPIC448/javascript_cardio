@@ -381,31 +381,27 @@ let copiedArr = [...firstArrayBall]
      // Does not work with strings.
 const firstMutiply = (arg1, ...agr2) => {
     // Note .. arg1 - 1st numb in the Array  (2),  ..Rest is in Arg2 (1,2,3)
+  console.log(arg1)
   return agr2.map(function(element){return arg1 * element})
 }
- let testArr = firstMutiply(2,1,"strings",2,3, )
-// console.log(testArr)    //=> [ 2, NaN, 4, 6 ]
+ let testArr = firstMutiply(5,1,"strings",2,3, )
+console.log(testArr)    //=> [ 2, NaN, 4, 6 ]
   // --------------End of Rest Opereator-----------------
 
-
-
-
-  let DummyTeams = ['WAter', 'earth', 'wind' ]
-let DummyArr = [3, 2, 3, 4, 6]
 
   //-------------slice-------------..
    // Works mostly with arrays, 
    
+  let DummyTeams = ['WAter', 'earth', 'wind' ]
+let DummyArr = [3, 2, 3, 4, 6]
+
+
 const sliceTeam = DummyTeams.slice(0, 3)
  
 //console.log(sliceTeam)  //=> [ 'WAter', 'earth', 'wind' ] 
   
 const sliceArr = DummyArr.slice(1,4)
 ////console.log(sliceArr)   // => [ 2, 3, 4 ]
-
-
-
-
 
 
   // -------- End of Combined Methods--------------------
