@@ -183,7 +183,7 @@ const companies = [
                     })
 
                }
-               console.log(getSearchedComp(companies, "il"))
+               //console.log(getSearchedComp(companies, "il"))
                 
                  /*
                => [{
@@ -238,15 +238,27 @@ const companies = [
 
               },  0)
                 
-                //console.log(reduceAge)
+                console.log(reduceAge)
 
                 // Get Total Years for Each companys. 
-              const totalYears = companies.reduce(function (accumulator, company) {
+const totalYears = companies.reduce(function (accumulator, company, index) {
+                
                 return accumulator += company.end - company.start
                 
               },0)
 
               // console.log(totalYears) => 118
+
+              //
+              const reduceCompYear =(arr) =>{
+  
+                arr.reduce(function(accumulator, currentValue){
+                 // console.log(currentValue.start)
+              return accumulator +=  currentValue.end } 
+              
+              ),0}
+             
+console.log(reduceCompYear(companies))
 
   //------------end of reduce---------------
 
@@ -254,10 +266,7 @@ const companies = [
 
 
 
-// ------------ ENd of Higher Order Function ---------------------
-
-
-
+// ------------ End of Higher Order Function ---------------------
 
 
 
@@ -326,7 +335,7 @@ let arr = [3, 2, 3, 4, 6]
 
   }
 
-  // for...of
+  // ----------------for...of-----------------Works with Numbers Array---------------
 const helperFunc = (arr) => {
   let emptyNum = 0
   for (const i of arr) {
