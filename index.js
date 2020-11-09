@@ -2,9 +2,10 @@
 //https://www.youtube.com/watch?v=rRgD1yVwIvE
 
 // NOte.... Know deep how each of the Methods work independently and together is where the challenge it. 
-// High order functions for ARRAYS are.  map, reduce, filters,  They all can do .....
-// array.HIGH - ORDER JAVASCRIPT METHOS(function (accumulator, current value, current index), array => 0
+// High order functions for ARRAYS are.  map, reduce,   They all can do .....
+// array.HIGH - ORDER JAVASCRIPT METHOdS(function (accumulator, current value, current index), array => 0)
 // details included below for those methods.  
+// Filter Take only 3 ARGUMENTS
 
 
 
@@ -23,8 +24,14 @@ const companies = [
 
 // ------------ Start of Higher Order Function ---------------------
 
+// console.log(filter1(test))
+
 
               // --------filter----- GET 21 AN OLDER
+              //let newArray = arr.filter(callback(currentValue[, index[, array]]) {
+                // return element for newArray, if true
+              //}[, thisArg]);
+
               // The callback function passed to the filter() method accepts 3 arguments: element, index, and array.
               //      // Using ForLoop
               // let canDrink = []
@@ -74,15 +81,16 @@ const companies = [
 
                   //--------------------Get companies that Start in the 80s--------
               /// Note: filter can take an CALLBACK, INDEX,ARRAY
-              /*
+              
               const eightyComp = companies.filter(function (company, index, array) {
                 if (company.start >= 1980 && company.start <= 1990) { return company }
                 console.log(index)  // => 1,2,4,7
+                //console.log(array)  // Return all the Array as a Whole
               }
               )
 
-              console.log(eightyComp)
-              */
+              //console.log(eightyComp)
+              
 
               // Get Company Last more than 10 years. 
                 /*
@@ -92,6 +100,22 @@ const companies = [
 
               console.log(companiesLastTenYr)
                 */
+
+
+
+                  /// List company based on Search Categoreis
+
+               const getSearchedComp =(arr, query) => {
+   
+                return arr.filter(function(eachComp){
+                  return eachComp.category.toLowerCase().indexOf(query.toLowerCase()) != -1
+                  })
+                
+             }
+          
+          
+          // console.log(getSearchedComp(companies, "Retail"))
+
               //............................. End of Filter............
 
               
@@ -111,12 +135,16 @@ const companies = [
 
 
 
-              const companyNames = companies.map(function (company) {
+              const companyNames = companies.map(function (company,index, arr) {
 
+
+
+                
                 // get company name, Start and end Date.
                 return `${company.name} [${company.start}]   [${company.end}] `
                   //return List of Company  == >  [ 'Company One [1981]   [2003] ',
-                  }   
+
+               }   
               )
               // console.log(companyNames )
 
@@ -141,6 +169,36 @@ const companies = [
               //    */
 
 
+
+
+
+               /// Exercries. Find a company based on the Query of catergories. 
+          
+            // list out companoies based on Query researched. 
+             const getcompanyCategory =(arr, query) => {
+               
+                  return arr.map(function(eachComp){
+                    return eachComp.category.toLowerCase().indexOf(query.toLowerCase()) != -1 ? eachComp : "NaN" 
+                   // What the -1 means The first index of the element in the array; -1 if not found
+                    })
+
+               }
+               console.log(getSearchedComp(companies, "il"))
+                
+                 /*
+               => [{
+                     name: 'Company Two', category: 'Retail', start: 1992,
+                   end: 2008 },
+                 { name: 'Company Four',
+                   category: 'Retail',
+                   start: 1989,
+                   end: 2010 },
+                 { name: 'Company Nine',
+                   category: 'Retail',
+                   start: 1981,
+                   end: 1989 } ]
+
+                   */
                 //----------------____End  of Map------------------
 
 
