@@ -109,6 +109,9 @@ const companies = [
    
                 return arr.filter(function(eachComp){
                   return eachComp.category.toLowerCase().indexOf(query.toLowerCase()) != -1
+
+                  //The indexOf() method returns the position of the first occurrence of a specified value in a string. This method returns -1
+                  // if the value to search for never occurs.Note: The indexOf() method is case sensitive
                   })
                 
              }
@@ -221,6 +224,18 @@ const companies = [
 
               i.e //array.reduce(function( accumulator, current value, current index), array => 0)
 
+
+              ========= How it looks in code-------
+                              let smallNum = [2,4,6,8,10]
+
+                                let reducer =  smallNum.reduce(function(accumulator, value, index,array) {
+                                  return accumulator += value
+                                  },0)
+                                
+                                console.log(reducer)
+
+              =====================
+
                     */
                   
               // let ageSum = 0
@@ -241,7 +256,7 @@ const companies = [
                 console.log(reduceAge)
 
                 // Get Total Years for Each companys. 
-const totalYears = companies.reduce(function (accumulator, company, index) {
+                   const totalYears = companies.reduce(function (accumulator, company, index) {
                 
                 return accumulator += company.end - company.start
                 
@@ -289,6 +304,18 @@ let orderAge = ages.sort(function (a, b) {
   })
   //console.log(orderAge)
 
+   /* ============  Another way of sampling this. 
+    let smallNum = [50,2,10024,6,8,10]
+
+  let orderNum = smallNum.sort((a,b)=> {
+    return a - b
+    } )
+  
+  console.log(orderNum)
+  
+   
+   =================*/
+
   //-------------------End of SORT----------------
 
  //console.log(companies)
@@ -301,6 +328,21 @@ let orderAge = ages.sort(function (a, b) {
 
 
 // ------------------------ForEach----------------
+  /*
+  let string = ["ánd", "like", "word" ]
+
+let eachWord = string.forEach(function(item, index){
+  console.log(item)
+  }, 0)
+  
+  console.log(eachWord)   =>
+   ánd
+like
+word
+undefined
+  
+  */
+
 
 // companies.forEach(function (company, index, companies) {
 //   // Can take up to 3 Argment.  
@@ -314,10 +356,8 @@ let orderAge = ages.sort(function (a, b) {
 //--------------- End Of ForEach--------------------
 
 
+
 // ------------- Other Methods --------------
-
-
-
 
 
 
@@ -325,7 +365,7 @@ let teams = { name: "alex", color: "red", city: "NewYork" }
 let arr = [3, 2, 3, 4, 6]
 //array.foo = 'Test Hello'
   
-//----------------------for..in    ...... Work Strings
+//----------------------for..in    ...... Work OBJECTS. ("in" --- work with "string")
   let emptyString = ''
     
   for (const key in teams) {
@@ -386,6 +426,28 @@ const firstMutiply = (arg1, ...agr2) => {
 }
  let testArr = firstMutiply(5,1,"strings",2,3, )
 console.log(testArr)    //=> [ 2, NaN, 4, 6 ]
+
+//---------------
+
+
+//  Combine the total End year of each company. 
+ // Using Map
+const useRest = (arr1, ...arr2) => {
+   
+  return arr2.map(function(element, index, array){
+     //  console.log(element)
+       //console.log(index)
+      //console.log(array)
+     (arr1 + element)
+  })
+  
+       }
+       
+       
+ console.log(useRest(4,"ju7mp",3,2,4))  //=>4Jump768
+
+
+
   // --------------End of Rest Opereator-----------------
 
 

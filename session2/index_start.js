@@ -10,7 +10,7 @@
 //       // Sort the element in Array.
 //   var getLongestWord = senSplit.sort(function (a, b) {
 //       return b.length - a.length 
-//   })
+//   })      
   
 //        //Say 2 or more words are longer at the same. .
 //   // const longwordArray = getLongestWord.filter(function (word) {

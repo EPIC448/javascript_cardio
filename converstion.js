@@ -107,12 +107,14 @@ class Car = {
 }
     
 /* Capitalize constant values Snake Upper Case, And Use for primitive value.
-    used mostly for Things That cant be changed like the HOurs of the Day, or Age.
+    used mostly for Things That cant be changed like the Hours of the Day, or Age.
     const Hours_IN_DAY = 24
     const User_Age = 30
  */
 
 // Avoid one-letter Variable names..... 
 // It become Easy to forget, You can limit them to Super Small function, Like a Loop
+
 const q = () => { }  // No idea what Q mean
+
    const   query = () =>{ } // is much better. 

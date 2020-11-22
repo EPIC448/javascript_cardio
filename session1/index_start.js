@@ -74,7 +74,7 @@ console.log(reverseInt(testInt))
 function capitalizeLetters(str) {
   
   return str.toLowerCase().split(' ').map(function (word) {
-    return word[0].toUpperCase() + word.substring(1)  // using substring attache the remindr doe the Word
+    return word[0].toUpperCase() + word.substring(1)  // using substring attache the remindr do the Word
   }).join(' ')
     
 }

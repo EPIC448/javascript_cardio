@@ -9,44 +9,56 @@
 //         total += num;
 //     });
 //     return total;
-// }
+// }   => 02,5,6,7
+
 
 
 // ---------------------------------------------------
 // CHALLENGE 2: SUM ALL PRIMES
-// Pass in a number to loop up to and add all of the prime numbers. 
+
+// What is a PRIME NUMBER ==A prime number is a natural number greater than 1 that 
+// is not a product of two smaller natural numbers. 
+
+// Pass in a number to loop up to and add all of the prime numbers.
 //A prime number is a whole number greater than 1 whose only factors are 1 and itself
 // ex. sumAllPrimes(10) == 17
 //prime number can only by mutiply 1 or itself
 
-function sumAllPrimes(num) {
+// add all Prime Num (10)= 17
 
-    let total = 0
-    //Note: We Start from 2 because the num most be higher < 2
+
+ // Function  check Prime Numeber
+ const checkPrime = (num) =>{
+    let total  = 0;
     
-    // Step2
-    const checkForPrime = (i) => {
+    // Function Check for Prime(i)
+    const checkPrime = (i) => {
+        // NOte:  we want to check whether i is divisible by k = 2. If it is, it isn’t a prime number 
+        //and we need to return the result a result of false.If the loop completes, the number must be a prime, 
+    // and we can return a result of true.
+    //2,3,4,5,6,7,8,9,10
+      for(let k =2; k < i; k++){
         
-        for (let j = 2; j < i; j++){
-            if (i % j === 0) {
-                return false
-            }
+        
+      if(i % k === 0){
+          return false;
         }
-        return true
-    }
-
-    // step 1
+      }
+        return true;
+       
+      }
     
-    for (let index = 2; index <= num; index++) {
-      
-        if (checkForPrime(index)) {
-            
-           total += index
-            
-        }
+    
+    // Prime number most be greater than 2
+    for ( let i =2; i <= num; i++ ){
+       if (checkPrime(i)){ 
+       total += i; 
+       }
     }
-   return total
+    return total
   }
+    
+    console.log(checkPrime(10))
 
 //--------------------------------------------------------------------
 // CHALLENGE 3: SEEK & DESTROY
@@ -54,10 +66,9 @@ function sumAllPrimes(num) {
 // a = [-1, 150, 190, 170, -1, -1, 160, 180]
 // sortByHeight(a) == [-1, 150, 160, 170, -1, -1, 180, 190]
 
-//  learn how we use ...rest, filter and includes 
 const seekAndDestroy = (arr, ...rest) => {
     // Filter only return want is "True" discard the rest
-    // Note If i want it to inlude----  return arr.filter(val =>rest.includes(val))
+    // Note If i want it to include----  return arr.filter(val =>rest.includes(val))
     return arr.filter(val =>!rest.includes(val))
      
  }
