@@ -28,7 +28,7 @@
 
 
  // Function  check Prime Numeber
- const checkPrime = (num) =>{
+ const checkPrimeNum = (num) =>{
     let total  = 0;
     
     // Function Check for Prime(i)
@@ -58,13 +58,11 @@
     return total
   }
     
-    console.log(checkPrime(10))
+    console.log(checkPrimeNum(10))  //=> 17
 
 //--------------------------------------------------------------------
 // CHALLENGE 3: SEEK & DESTROY
-// ex.
-// a = [-1, 150, 190, 170, -1, -1, 160, 180]
-// sortByHeight(a) == [-1, 150, 160, 170, -1, -1, 180, 190]
+
 
 const seekAndDestroy = (arr, ...rest) => {
     // Filter only return want is "True" discard the rest
@@ -77,30 +75,46 @@ const seekAndDestroy = (arr, ...rest) => {
 
 //---------------------------------------------------------------------
 
-function sortByHeight() {
-    // Some people are standing in a row in a park. 
+//Sort By Height. 
+// Some people are standing in a row in a park. 
     //There are trees between them which cannot be moved.
-    //Your task is to rearrange the people by their heights in a non - descending order without moving the trees.
-// ex.
-// a = [-1, 150, 190, 170, -1, -1, 160, 180]
-// sortByHeight(a) == [-1, 150, 160, 170, -1, -1, 180, 190]
+    //Your task is to rearrange the people by their heights in a non-descending(smallest- larget) 
+    // order without moving the trees.
     
-    // Create 2 empty Array to seperate  the negative -1 and just numbers. 
-    const arr1 = [];
-    const arr2 = [];  
-    a.forEach(function (val, i ) {
-        ( val === -1? arr1.push(i) : arr2.push(val))
+    let peopleAndTrees = [-1, 150, 190, 170, -1, -1, 160, 180]
+ 
+    let peopleArr = [], treeArr = [], make = [3,2,4]
+    
+    function sortByHeight(arr){
+      
+      
+    // Iterate Arr
+   //
+   // }
+   
+    // Note: We need to collect it index for the Trees, so we can use later....
+    arr.forEach(function(val, index) {
+      val === -1 ? treeArr.push(index) : peopleArr.push(val)
     })
-    // we sort the arr 2 from smallest to largest. 
-    // sorting from smallest to largest
-    const sortArr = arr2.sort((a, b) => a - b) 
-    
-    arr1.forEach((val, i) => sortArr.splice(arr1[i], 0, -1));
-    return sortArr;
-}
-
-let a = [-1, 150, 190, 170, -1, -1, 160, 180]
- //console.log(sortByHeight(a))
+     console.log(peopleArr)
+      // Sort the people from Smallest to Largets.
+         let sortedPeople = peopleArr.sort((a,b) => a -b)
+      
+      // Concatenat them where Tree stay where it is, And the new 
+      //Sorted Height People... Stand in the Gap. USe ForEach
+      
+      treeArr.forEach(function(element,index){
+        
+        
+           sortedPeople.splice(treeArr[index], 0, -1)
+         
+         
+        })
+        return sortedPeople
+      }
+      
+console.log(sortByHeight(peopleAndTrees))
+      // => [ -1, 150, 160, 170, -1, -1, 180, 190 ]
 
  //------------------------------- //Needing to study this.-------
 // CHALLENGE 5: MISSING LETTERS
