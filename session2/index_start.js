@@ -1,4 +1,4 @@
-// CHALLENGE 1: LONGEST WORD
+// CHALLENGE 1: LONGEST WORD  /// Revist. 
 // Return the longest word of a string
 // ex. longestWord('Hi there, my name is Brad') === 'there,'
 
@@ -27,31 +27,33 @@
 
 //---------------------------------------------------------
 
-// CHALLENGE 2: ARRAY CHUNKING
+// CHALLENGE 2: --------ARRAY CHUNKING------working------
 // Split an array into chunked arrays of a specific length
 // ex. chunkArray([1, 2, 3, 4, 5, 6, 7], 3) === [[1, 2, 3],[4, 5, 6],[7]]
 // ex. chunkArray([1, 2, 3, 4, 5, 6, 7], 2) === [[1, 2],[3, 4],[5, 6],[7]]
 
-// function chunkArray(arr, len) {
 
-//     //  create a empty arr
-//     let emptyChunckedArr = []
-//      let  i = 0
+const chuckArray = (arr, size) => {
   
-//   // loop when index < arr.length
-//   while (i < arr.length) {
-//     // emptyArr.push(arr.slice(i, i+len))
-    
-//      //Slice out from index to the Index + the Chunk len & push on the  emptyChunckedArr
-//     emptyChunckedArr.push(arr.slice(i, i + len))  
-      
-//     //increment by chunk lenght
-//     i += len;
-    
-//    }
+  //   Create an empty array to hold the chunks called chunked_arr.
+  // Declare a variable called index started at 0
+   let chuncked_arr = [ ] ; let index = 0;
   
-//   return emptyChunckedArr
-// }
+  // While index is less than length of the given array
+    while(index < arr.length){
+  //   Slice the array from index to size + index and push it into the chunked_arr
+      chuncked_arr.push(arr.slice(index, size + index));
+    // Increment the index with size
+     index += size
+    
+    }
+    return chuncked_arr
+    }
+    
+    
+    
+console.log(chuckArray([1, 2, 3, 4, 5, 6, 7], 2))  
+     //=> [ [ 1, 2 ], [ 3, 4 ], [ 5, 6 ], [ 7 ] ] 
 // -------------------------------------------------------------
 // CHALLENGE 3: FLATTEN ARRAY
 // Take an array of arrays and flatten to a single array
