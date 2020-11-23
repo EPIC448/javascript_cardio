@@ -43,7 +43,7 @@ const isPalindrome=(str) => {
   //Create new varible &reverse the string..... split, reverse, join
   let reverseStr = str.split('').reverse().join('')
   // Compre reverese string to  orginal string . return true or false
-  
+  // Note: .join need to be invoked with ('')
   return (reverseStr  === str ?  true :  false)
  }
 
@@ -62,6 +62,8 @@ function reverseInt(int) {
   return parseInt(revInt) * Math.sign(int)
   //return back to Interger/ and include the Sign 
 }
+
+//note:  Work most when the Number passed in is a string ("324")
 let testInt = [-52156546]
 console.log(reverseInt(testInt))
 
@@ -82,18 +84,19 @@ function capitalizeLetters(str) {
 console.log(capitalizeLetters("i love Bodybuilding so much"))
 
 
-// CHALLENGE 5: MAX CHARACTER
+//=============== CHALLENGE 5: MAX CHARACTER==================
 // Return the character that is most common in a string
 // ex. maxCharacter('javascript') == 'a'
 function maxCharacter(str) {
    // make a charter map =>   f:1, u:1, n:2, y:1
   let emptyObj = {};
   for (const char of str) {
+    // Note make sure to use "OF"...
     (!emptyObj[char]) ? emptyObj[char] = 1 : emptyObj[char]++
     // return emptyObj we had to Mute this SO to use in other varible 
     
     }
-          // This is an objec now.
+          // This is an objet now.
 
   let maxNum = 0;
   let maxChar = "";
