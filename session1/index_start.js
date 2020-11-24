@@ -11,13 +11,15 @@ function reverseString(str) {
   //--------------------- Another solution with ForLoop----------
   let revString = '';
   for (let char of str){
-    revString = char+revString  
+    revString = char+revString.toLowerCase()
   }
   return revString;
 }
 const a = [1, 24, 5, 6]
   const b = ("hello")
-  console.log(reverseString(b))
+console.log(reverseString(b))
+  
+module.exports = reverseString;
 //------------------------------------------------
 
 // CHALLENGE 2: VALIDATE A PALINDROME
