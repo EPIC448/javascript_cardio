@@ -223,7 +223,11 @@ const companies = [
                     
 
               i.e //array.reduce(function( accumulator, current value, current index), array => 0)
-
+         
+         
+              const totalOfAge = ages.reduce(function(acc,currentValue, index, array){
+             note: acc always start at zero. 
+              }, 0)
 
               ========= How it looks in code-------
                               let smallNum = [2,4,6,8,10]
@@ -327,7 +331,7 @@ let orderAge = ages.sort(function (a, b) {
   // }
 
 
-// ------------------------ForEach----------------
+// ------------------------ForEach----- Structued like Reduce function-----------
   /*
   let string = ["ánd", "like", "word" ]
 
@@ -485,3 +489,18 @@ const checkSlice = (arr) => { return arr.slice(3, 4) }
 for (const cons of object) {
   
 }
+
+
+//  =========Difference betweeen length and index. ==============
+let getLengthOfAge = (arr) => {
+  let container = []
+  
+  console.log(arr.length) // => 3
+  
+  for(let i = 0; i < arr.length; i++){
+  console.log(i)  //=> 0,1,2,
+  }
+}
+console.log(getLengthOfAge([1,2,4]))
+
+// ======== end of Difference  between length & Index=====
