@@ -5,6 +5,8 @@ const {
     checkValue,
     createUser,
     isLess_than_and_greaterThan,
+    findUserName,
+    asynchronousRequest,
 } = require('./');
 
 
@@ -77,4 +79,42 @@ describe("There is no I in team", () => {
     it("No I in team", () => {
         expect("team").not.toMatch(/I/i)
     })
+})
+
+ // Arrays
+describe("findUserName", () => {
+    it("Admin should be in userNames", () => {
+
+         let userNames = ['john', 'Karen', 'admin'];
+        
+        expect(userNames).toContain('admin')
+    })
+
+})
+
+
+ // WORKING WITH async Data. PROMISE
+
+xdescribe(" Testing Async Data.", () => {
+    it("User fetched name should be Leanne Graham", () => {
+
+        expect.assertions(1);
+        return asynchronousRequest()
+            .then(data => {
+            expect(data.name).toEqual('Leanne Graham')
+        })
+    })
+
+})
+
+//Asyc await syntax
+describe(" Testing Async Data.", () => {
+    it("User fetched name should be Leanne Graham", async () => {
+
+        expect.assertions(1);
+        const data = await asynchronousRequest();
+            expect(data.name).toEqual('Leanne Graham')
+        
+    })
+
 })

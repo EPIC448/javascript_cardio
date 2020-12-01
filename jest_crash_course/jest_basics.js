@@ -1,3 +1,4 @@
+const axios = require("axios");
 
 
 const onlyEven = array => {
@@ -25,9 +26,18 @@ return user
 }
 
 
+const asynchronousRequest = () => axios
+    .get('https://jsonplaceholder.typicode.com/users/1')
+    .then(response => response.data)
+    //.then(json => console.log(json))
+    .catch(err => 'error')
+       
+
+  
+
 
 module.exports = {
  // names of the created functions here.
-    onlyEven, add, isNull, checkValue, createUser,
+    onlyEven, add, isNull, checkValue, createUser,asynchronousRequest,
 
 }
