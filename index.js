@@ -110,7 +110,7 @@ const companies = [
                 return arr.filter(function(eachComp){
                   return eachComp.category.toLowerCase().indexOf(query.toLowerCase()) != -1
 
-                  //The indexOf() method returns the position of the first occurrence of a specified value in a string. This method returns -1
+                  //The () method returns the position of the first occurrence of a specified value in a string. This method returns -1
                   // if the value to search for never occurs.Note: The indexOf() method is case sensitive
                   })
                 

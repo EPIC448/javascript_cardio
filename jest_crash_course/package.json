@@ -1,0 +1,12 @@
+{
+  "name": "jest_crash_course",
+  "version": "1.0.0",
+  "description": "",
+  "main": "jest_basics.js",
+  "scripts": {
+    "test": "jest --watchAll"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
