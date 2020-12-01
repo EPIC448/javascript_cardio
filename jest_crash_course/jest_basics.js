@@ -9,8 +9,25 @@ const onlyEven = array => {
     return evenBucket
 };
 
+
+const add = (num1, num2) => {
+     return num1 + num2
+ }
+
+const isNull = () => null
+ 
+const checkValue = () => false //0
+
+const createUser = () => {
+    const user = { firstName: "Brad" }
+    user['lastName'] = "Traversy";
+return user
+}
+
+
+
 module.exports = {
  // names of the created functions here.
-    onlyEven, 
+    onlyEven, add, isNull, checkValue, createUser,
 
 }
