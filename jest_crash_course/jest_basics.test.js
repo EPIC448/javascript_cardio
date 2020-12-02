@@ -7,6 +7,7 @@ const {
     isLess_than_and_greaterThan,
     findUserName,
     asynchronousRequest,
+    reverseString, 
 } = require('./');
 
 
@@ -118,3 +119,20 @@ describe(" Testing Async Data.", () => {
     })
 
 })
+
+// Test algorithem   + Combine Several Test in one.
+describe("ReverseString", () => {
+
+    it("ReverseString function exist ", () => {
+            expect(reverseString).toBeDefined();
+
+    })
+
+    
+    it("String reverses", () => {
+        expect(reverseString('hello')).toEqual('olleh');
+
+    })
+})
+
+    

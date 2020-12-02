@@ -33,11 +33,20 @@ const asynchronousRequest = () => axios
     .catch(err => 'error')
        
 
+    //Testing Algorithem Problems. 
+
+const reverseString = (str) => {
+    let revString = '';
+  for (let char of str){
+    revString = char+revString.toLowerCase()
+  }
+  return revString;
+}  
   
 
 
 module.exports = {
  // names of the created functions here.
-    onlyEven, add, isNull, checkValue, createUser,asynchronousRequest,
+    onlyEven, add, isNull, checkValue, createUser,asynchronousRequest, reverseString,
 
 }
