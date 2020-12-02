@@ -8,6 +8,8 @@ const {
     findUserName,
     asynchronousRequest,
     reverseString, 
+    chunkArray,
+    isAnagram,
 } = require('./');
 
 
@@ -131,8 +133,48 @@ describe("ReverseString", () => {
     
     it("String reverses", () => {
         expect(reverseString('hello')).toEqual('olleh');
-
     })
 })
 
+describe("ChunkArry", () => {
+
+    it('chunkArray function exist', () => {
+        expect(chunkArray).toBeDefined();
+    })
+
+    it('chunk an array  of 10 values with length of 2', () => {
+        const arr = [1,2,3,4,5,6,7,8,9,10]
+        const size = 2
+        const chunkArr = chunkArray(arr, size)
+
+        expect(chunkArr).toEqual([[1,2,], [3,4], [5,6], [7,8], [9,10]     ]);
+    })
+})
     
+
+describe("isAnagram", () => {
+
+    it('isAnagram function exist', () => {
+        expect(isAnagram).toBeDefined();
+    });
+
+    it('isAnagram function exist', () => {
+        expect(typeof isAnagram).toEqual('function');
+    });
+
+    it(' "cinema" is an anagram of  "iceman" ', () => {
+        expect( isAnagram('cinema', 'iceman')).toBeTruthy();
+    });
+
+    // last 2 not passing
+
+    it(' "Dormitory" is an anagram of  "dirty room" ', () => {
+        expect( isAnagram('Dormitory', 'dirty room')).toBeTruthy();
+    });
+
+    it(' "Hello" is an anagram of  "Aloha" ', () => {
+        expect( isAnagram('Hello', 'Aloha')).toBeFalsy();
+    });
+
+
+})
