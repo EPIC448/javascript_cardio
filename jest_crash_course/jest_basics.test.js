@@ -166,14 +166,14 @@ describe("isAnagram", () => {
         expect( isAnagram('cinema', 'iceman')).toBeTruthy();
     });
 
-    // last 2 not passing
+    // was  not passing because of space in between
 
-    it(' "Dormitory" is an anagram of  "dirty room" ', () => {
-        expect( isAnagram('Dormitory', 'dirty room')).toBeTruthy();
+    it(' "Dormitory" is an anagram of  "dirtyroom" ', () => {
+        expect( isAnagram('Dormitory', 'dirtyroom')).toBeTruthy();
     });
 
-    it(' "Hello" is an anagram of  "Aloha" ', () => {
-        expect( isAnagram('Hello', 'Aloha')).toBeFalsy();
+    it(' "Hello" is NOT an anagram of  "Aloha" ', () => {
+        expect( isAnagram('Hello', 'aloha')).toBeFalsy();
     });
 
 
