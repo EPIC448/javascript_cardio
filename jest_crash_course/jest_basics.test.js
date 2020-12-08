@@ -169,7 +169,7 @@ describe("isAnagram", () => {
     // was  not passing because of space in between
 
     it(' "Dormitory" is an anagram of  "dirtyroom" ', () => {
-        expect( isAnagram('Dormitory', 'dirtyroom')).toBeTruthy();
+        expect( isAnagram('Dormitory', 'dirtyrsoom')).toBeTruthy();
     });
 
     it(' "Hello" is NOT an anagram of  "Aloha" ', () => {

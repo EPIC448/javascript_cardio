@@ -49,7 +49,8 @@ const isPalindrome=(str) => {
   return (reverseStr  === str ?  true :  false)
  }
 
-console.log(isPalindrome("bed")) // => true
+//console.log(isPalindrome("bed")) // => false
+// console.log(isPalindrome("mom")) // => true 
 
 
 // ----------------------------------
@@ -59,6 +60,7 @@ console.log(isPalindrome("bed")) // => true
 
 function reverseInt(int) {
 
+  // Having the  ''  in the right places make a huge differences
   let revInt = int.toString('').split('').reverse().join('');
 // Becasue Int, Turn into a string, Then split
   return parseInt(revInt) * Math.sign(int)
@@ -72,13 +74,14 @@ console.log(reverseInt(testInt))
 
 //---------------------------------------------------------------------------------------
 
-// CHALLENGE 4: CAPITALIZE LETTERS
+// -------CHALLENGE 4: CAPITALIZE LETTERS------Working-- Pratice---
 // Return a string with the first letter of every word capitalized
 // ex. capitalizeLetters('i love javascript') === 'I Love Javascript'
 function capitalizeLetters(str) {
   
+  // Note: the Spaces .split('') & .join('') VS .split(' ') & .join(' ') makes a ton of difference. 
   return str.toLowerCase().split(' ').map(function (word) {
-    return word[0].toUpperCase() + word.substring(1)  // using substring attache the remindr do the Word
+    return word[0].toUpperCase() + word.substring(1)  // using substring attache the reminder do the Word
   }).join(' ')
     
 }
@@ -119,7 +122,7 @@ function maxCharacter(str) {
 console.log(maxCharacter('javascrijpty'))
 // ---------------------------------------------------------------------
 
-// CHALLENGE 6: FIZZBUZZ
+// -----CHALLENGE 6: FIZZBUZZ---------redo....
 // Write a program that prints all the numbers from 1 to 100. 
 // For multiples of 3, instead of the number, print "Fizz", 
 // for multiples of 5 print "Buzz".For numbers which are multiples of both 3 and 5, print "FizzBuzz".

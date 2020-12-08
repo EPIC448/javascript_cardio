@@ -1,30 +1,13 @@
-// CHALLENGE 1: LONGEST WORD  /// Revist. 
-// Return the longest word of a string
-// ex. longestWord('Hi there, my name is Brad') === 'there,'
+// CHALLENGE 1: LONGEST WORD -----  /// ----Working. 
+const getLongestWord = (str) => { 
+  let longestWord = str.split(' ').sort(function (a, b) { return b.length - a.length; });
+  //creating an array  & putting them in order as they are sorted. Then return the first word in that 
+   //array
 
-// function longestWord(sen) {
-//   // SOLUTION 1 - Return a single longest word
-//       //Remove punctuation.match 
-//   var senSplit = sen.split(' ')
-  
-//       // Sort the element in Array.
-//   var getLongestWord = senSplit.sort(function (a, b) {
-//       return b.length - a.length 
-//   })      
-  
-//        //Say 2 or more words are longer at the same. .
-//   // const longwordArray = getLongestWord.filter(function (word) {
-//   //   console.log(getLongestWord)
-//   //   if (getLongestWord[0].length === word.length) {
-//   //         return getLongestWord
-//   //   } else
-//   //     return   getLongestWord[0]
+  return longestWord[0]
+}
 
-//   // })
-//   return getLongestWord[0]
-  
-// }
-
+console.log(getLongestWord("force be with you")) //> force
 //---------------------------------------------------------
 
 // CHALLENGE 2: --------ARRAY CHUNKING------working------
@@ -44,6 +27,9 @@ const chuckArray = (arr, size) => {
   //   Slice the array from index to size + index and push it into the chunked_arr
       chuncked_arr.push(arr.slice(index, size + index));
     // Increment the index with size
+      // console.log(index) //0,2,4,6
+      // console.log(size ) // 2,2,2,2
+
      index += size
     
     }
@@ -52,7 +38,7 @@ const chuckArray = (arr, size) => {
     
     
     
-console.log(chuckArray([1, 2, 3, 4, 5, 6, 7], 2))  
+console.log(chuckArray([1, 2, 3, 4, 5, 6, 7],2))  
      //=> [ [ 1, 2 ], [ 3, 4 ], [ 5, 6 ], [ 7 ] ] 
 // -------------------------------------------------------------
 // CHALLENGE 3: FLATTEN ARRAY
