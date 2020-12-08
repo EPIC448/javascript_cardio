@@ -109,7 +109,7 @@ const seekAndDestroy = (arr, ...rest) => {
     arr.forEach(function(val, index) {
       val === -1 ? treeArr.push(index) : peopleArr.push(val)
     })
-     console.log(peopleArr)
+     //console.log(peopleArr)
       // Sort the people from Smallest to Largets.
          let sortedPeople = peopleArr.sort((a,b) => a -b)
       
@@ -130,32 +130,33 @@ console.log(sortByHeight(peopleAndTrees))
       // => [ -1, 150, 160, 170, -1, -1, 180, 190 ]
 
  //------------------------------- //Needing to study this.-------
-// CHALLENGE 5: MISSING LETTERS
+// ------CHALLENGE 5: -----MISSING LETTERS--- Workin-----
 // Find the missing letter in the passed letter range and return it. If all letters are present, return undefined
 // ex.
 // missingLetters("abce") == "d"
 // missingLetters("abcdefghjklmno") == "i"
 // missingLetters("abcdefghijklmnopqrstuvwxyz") == undefined
 
-// function missingLetters(str) {
-//     let compare = str.charCodeAt(0) // start at the first charater code of the string. 
-//     let missing;
+function missingLetters(str) {
+    let compare = str.charCodeAt(0) // start at the first charater code of the string. 
+    let missing;
 
-//     str.split('').map(function (char, i) {
-//         // if the charcter at that code is missing, it move to the next chartercter code. 
-//         if (str.charCodeAt(i) == compare) {
-//             ++compare;
-//         } else {
-//             missing = String.fromCharCode(compare)
-//         }
-//     })
-//     return missing
-// }
+    str.split('').map(function (char, i) {
+        // if the charcter at that code is missing, it move to the next chartercter code. 
+       // using the indexs in the Charater code stored in compare
+        if (str.charCodeAt(i) == compare) {
+            ++compare;
+        } else {
+            missing = String.fromCharCode(compare)
+        }
+    })
+    return missing
+}
 
-//console.log(missingLetters("abd"))//  => c
+console.log(missingLetters("abd"))//  => c
 
 //----------------
-// CHALLENGE 6: EVEN & ODD SUMS
+// ------CHALLENGE 6: EVEN & ODD SUMS------ working---- 
 // Take in an array and return an array of the sums of even and odd numbers
 // ex.
 // evenOddSums([50, 60, 60, 45, 71]) == [170, 116]
