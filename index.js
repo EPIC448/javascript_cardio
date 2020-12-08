@@ -104,6 +104,7 @@ const companies = [
 
 
                   /// List company based on Search Categoreis
+                  // May use on a project down the road.
 
                const getSearchedComp =(arr, query) => {
    
@@ -140,9 +141,6 @@ const companies = [
 
               const companyNames = companies.map(function (company,index, arr) {
 
-
-
-                
                 // get company name, Start and end Date.
                 return `${company.name} [${company.start}]   [${company.end}] `
                   //return List of Company  == >  [ 'Company One [1981]   [2003] ',
@@ -207,7 +205,7 @@ const companies = [
 
 
 
-                //-------------reduce-----------------------
+                //-------------reduce-----------------------  Purpose of Intial value at the end of reduce
                   // Look to add all the numbers into 1.
                   /*
               The reduce method accepts two parameters: 1) The reducer function (callback), 2) and an optional initialValue.
@@ -379,6 +377,15 @@ let arr = [3, 2, 3, 4, 6]
 
   }
 
+
+  //If for--In is used like this,
+  let arrTest = [3, 2, 3, 4, 6]
+
+ for(const key in arrTest){ 
+    console.log(key) //=>  //Gives index 0,1,2,3
+   //console.log(arr[key])  //=> 3,2,3,4,6
+   }
+
   // ----------------for...of-----------------Works with Numbers Array---------------
 const helperFunc = (arr) => {
   let emptyNum = 0
@@ -486,9 +493,6 @@ const checkSlice = (arr) => { return arr.slice(3, 4) }
  
 // console.log(checkSlice(some))
 
-for (const cons of object) {
-  
-}
 
 
 //  =========Difference betweeen length and index. ==============
@@ -497,8 +501,8 @@ let getLengthOfAge = (arr) => {
   
   console.log(arr.length) // => 3
   
-  for(let i = 0; i < arr.length; i++){
-  console.log(i)  //=> 0,1,2,
+  for(let index = 0; index < arr.length; index++){
+  console.log(index)  //=> 0,1,2,
   }
 }
 console.log(getLengthOfAge([1,2,4]))
