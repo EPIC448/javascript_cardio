@@ -1,7 +1,16 @@
-// CHALLENGE 1: ADD ALL NUMBERS
+// -----CHALLENGE 1: ADD ALL NUMBERS----- working
 // Return a sum of all parameters entered regardless of the amount of numbers - NO ARRAYS
 // ex. addAll(2,5,6,7) === 20
 
+//solution 1
+let addNum = (num) => {
+   return num.reduce((acc, value) => acc + value)  
+
+}
+  
+console.log(addNum([2,5,6,7])) //> 20
+
+ // solution  2
 // function addAll(...rest) {
 //      //using rest oprator. 
 //     let total = 0;
@@ -14,10 +23,10 @@
 
 
 // ---------------------------------------------------
-// CHALLENGE 2: SUM ALL PRIMES
+// --------CHALLENGE 2: SUM ALL PRIMES----------working------
 
-// What is a PRIME NUMBER ==A prime number is a natural number greater than 1 that 
-// is not a product of two smaller natural numbers. 
+// What is a PRIME NUMBER = A prime number is defined as a number greater than one and having only two 
+// divisors, one and itself. For example, 2 is a prime number because it's only divisible by one and two.
 
 // Pass in a number to loop up to and add all of the prime numbers.
 //A prime number is a whole number greater than 1 whose only factors are 1 and itself
@@ -26,40 +35,44 @@
 
 // add all Prime Num (10)= 17
 
-
- // Function  check Prime Numeber
- const checkPrimeNum = (num) =>{
-    let total  = 0;
-    
-    // Function Check for Prime(i)
-    const checkPrime = (i) => {
-        // NOte:  we want to check whether i is divisible by k = 2. If it is, it isn’t a prime number 
-        //and we need to return the result a result of false.If the loop completes, the number must be a prime, 
+   let sumOfPrimeNum = (num) => {
+     
+    // step1 , empty total accumulator = o
+      let total = 0
+      let allPrimeNum = []
+      
+      //step2 = function that check primeNum, and return boolean if 
+      //diversable by 2
+        // Use a for loop that start from 2
+        let checkPrimeNum = (i) => {
+          // NOte:  we want to check whether i is divisible by k = 2. If it is, it isn’t a prime number 
+    //and we need to return the result a result of false.If the loop completes, the number must be a prime, 
     // and we can return a result of true.
     //2,3,4,5,6,7,8,9,10
-      for(let k =2; k < i; k++){
-        
-        
-      if(i % k === 0){
-          return false;
-        }
-      }
-        return true;
-       
-      }
+          
+            for(let k = 2; k < i; k++){
+               
+               
+                if (i % k === 0){
+                  return false
+                  } 
+              }
+              return true
+          }
+          
+       // step3: loop over the give num and check each values with checkPrimeNum function
+       for(let i = 2; i <= num; i++){
+          if(checkPrimeNum(i)){
+            total += i;
+            allPrimeNum.push(i)
+            }
+         }
+       return [total,allPrimeNum]
     
-    
-    // Prime number most be greater than 2
-    for ( let i =2; i <= num; i++ ){
-       if (checkPrime(i)){ 
-       total += i; 
-       }
     }
-    return total
-  }
     
-    console.log(checkPrimeNum(10))  //=> 17
-
+    console.log(sumOfPrimeNum(10))
+  
 //--------------------------------------------------------------------
 // CHALLENGE 3: SEEK & DESTROY
 
@@ -158,4 +171,4 @@ function evenOddSums(arr) {
     
  
 
-console.log(evenOddSums([50, 60, 60, 45, 71]))
+console.log(evenOddSums([50, 60, 60, 45, 71]) )

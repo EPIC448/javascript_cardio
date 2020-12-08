@@ -58,6 +58,15 @@ function flattenArray(arrays) {
    return [].concat(...arrays)
 }
 
+ //-------Solution 3-----------
+ let flattenArr = (arr) => {
+  return arr.reduce((a,b) =>  a.concat(b))
+   
+  }
+   let chuckedArray = [[1, 2], [3, 4], [5, 6], [7]]
+   
+  console.log(flattenArr(chuckedArray))
+
 //------------------------  NOt workin yet-----------------------------------------
 // CHALLENGE 4: ANAGRAM-
 // Return true if anagram and false if not
@@ -73,9 +82,9 @@ function isAnagram(str1, str2) {
   return formateStr(str1) === formateStr(str2);
    
 
-  //helper functions
+  //helper functions.. Most be decled as a function.
   function formateStr(str) {
-    //Take out punctutation using REGULAR Expression , 
+    //Take out punctutation, non-alphebetical characters using REGULAR Expression , 
     //Turn it all to lowercase 
     //split into Array, then Join it back .
     
@@ -87,26 +96,24 @@ function isAnagram(str1, str2) {
       .join('');
     
   }
-  
+  //  could be below as well.
+  //return formateStr(str1) === formateStr(str2)
+
 
 }
   
-  // use th Helper method
-  
-
-//}
+ console.log(isAnagram("dirty room", "dormitory"))
 //  -------------------------------------------------
-// CHALLENGE 5: LETTER CHANGES
+// -------CHALLENGE 5: LETTER CHANGES--------------
 // Change every letter of the string to the one that follows it and capitalize the vowels
 // Z should turn to A
 // ex. 'hello there' === 'Ifmmp UIfsf'
-
 
 function letterChanges(str) {
 
   // create new String with regular expression to ..  [gi] means Global case insensitve 
   let newStr = str.replace(/[a-z]/gi, function (char) {
-    // If the Charter is at Z, we need a way for it ti loop around 
+    // If the Charter is at Z, we need a way for it to loop around 
     if (char === 'z' || char === 'Z') {
       return 'a'
     } else {
@@ -122,7 +129,7 @@ function letterChanges(str) {
    return newStr
 }
 
-
+// You can work this into your project.
 
 
 //----------------------------------------------------------------------
