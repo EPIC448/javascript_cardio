@@ -1,7 +1,7 @@
 
 //https://www.youtube.com/watch?v=rRgD1yVwIvE
 
-// NOte.... Know deep how each of the Methods work independently and together is where the challenge it. 
+// Note.... Know deep how each of the Methods work independently and together is where the challenge it. 
 // High order functions for ARRAYS are.  map, reduce,   They all can do .....
 // array.HIGH - ORDER JAVASCRIPT METHOdS(function (accumulator, current value, current index), array => 0)
 // details included below for those methods.  
@@ -200,12 +200,30 @@ const companies = [
                    end: 1989 } ]
 
                    */
+
+
+NOTE:
+     // use MAP 
+     const testMap = (arr, query) =>{
+     
+      return companies.map(function(company, index, array){
+          return company.name.toLowerCase().indexOf(query.toLowerCase()) != -1
+          
+        })
+      }
+      // returns a Boalean.
+      //[ false, true, false, false, false, false ]
+     console.log(testMap(companies, "two"))
+
+
+
+
                 //----------------____End  of Map------------------
 
 
 
 
-                //-------------reduce-----------------------  Purpose of Intial value at the end of reduce
+                //-------------reduce-----------------------  Purpose of Intial value at the end of reduce------ Need to Study reduce.----
                   // Look to add all the numbers into 1.
                   /*
               The reduce method accepts two parameters: 1) The reducer function (callback), 2) and an optional initialValue.
@@ -227,16 +245,15 @@ const companies = [
              note: acc always start at zero. 
               }, 0)
 
-              ========= How it looks in code-------
-                              let smallNum = [2,4,6,8,10]
 
-                                let reducer =  smallNum.reduce(function(accumulator, value, index,array) {
-                                  return accumulator += value
-                                  },0)
-                                
-                                console.log(reducer)
-
-              =====================
+              ----------- Option 1 use-------------------
+             HINT:  // Using Reducer//... You create it as an Helper function FIRST. Then You
+             //run it on each instance of your are/
+             
+             How it works in Real life. 
+             [0, 1, 2, 3, 4].reduce(function(accumulator, currentValue, currentIndex, array) {
+                return accumulator + currentValue
+       })
 
                     */
                   
@@ -266,18 +283,65 @@ const companies = [
 
               // console.log(totalYears) => 118
 
-              //
+              //----------- ReCheck this.. -- to make sure it is working Properly
               const reduceCompYear =(arr) =>{
   
                 arr.reduce(function(accumulator, currentValue){
                  // console.log(currentValue.start)
               return accumulator +=  currentValue.end } 
               
-              ),0}
+              ,0)}
              
 console.log(reduceCompYear(companies))
 
-  //------------end of reduce---------------
+
+    //  ---------- other Option of Use REDUCE.
+
+     /*
+   let people = [
+  { name: 'Alice', age: 21 },
+  { name: 'Max', age: 20 },
+  { name: 'Jane', age: 20 }
+];
+
+function groupBy(objectArray, property) {
+  return objectArray.reduce(function (acc, obj) {
+    let key = obj[property]
+    if (!acc[key]) {
+      acc[key] = []
+    }
+    acc[key].push(obj)
+    return acc
+  }, {})
+}
+
+let groupedPeople = groupBy(people, 'age')
+// groupedPeople is:
+// { 
+//   20: [
+//     { name: 'Max', age: 20 }, 
+//     { name: 'Jane', age: 20 }
+//   ], 
+//   21: [{ name: 'Alice', age: 21 }] 
+// }
+
+
+     */
+
+
+
+    //  ----------  Remove Duplicate using Reduce------------
+    let myArray = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd']
+let myOrderedArray = myArray.reduce(function (accumulator, currentValue) {
+  if (accumulator.indexOf(currentValue) === -1) {
+    accumulator.push(currentValue)
+  }
+  return accumulator
+}, [])
+
+console.log(myOrderedArray)
+
+  //------------end of reduce--------------------
 
   
 

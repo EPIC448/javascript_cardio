@@ -85,6 +85,45 @@ const isAnagram = (str1, str2) => {
 }
 
 
+// ------------ Testing Fibonacci--------
+
+ 
+//  Using Recussion. 
+//Numbers input:  1,2,3,4,5,6,7,8,9,10
+//fib Number out: 0,1,1,2,3,5,8,13,21,34
+
+// const fibNum = (n) => {
+//   if(n <=2) return 1
+   
+//   // for(let i = 0; i < n; i++){
+    
+//   return fibNum(n -1) + fibNum(n - 2)
+//     //
+    // }
+     
+   
+   
+    const fibonacci =(n) => {
+      let  arr = [0,1] // index
+      for (let i = 2; i < n; i++){
+        //n = 2,3,4,5
+        console.log
+        arr.push(arr[i - 1] + arr[i - 2])
+        
+        /* firsrt round 1     +  0 =1
+          2nd         
+        
+
+        */
+        }
+        return arr[n - 1]
+      }
+    
+    
+    console.log(fibonacci(6))
+
+
+//---------------End of testing Fibonacci---------
 
 module.exports = {
  // names of the created functions here.
