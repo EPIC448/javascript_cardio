@@ -265,7 +265,7 @@ NOTE:
               //       }
               //       console.log(ageSum)  => 366
 
-
+          // ------- Working Propely----------------
               const reduceAge = ages.reduce(function (total, age) {
                 // Can take an index too
                 return total + age
@@ -273,6 +273,8 @@ NOTE:
               },  0)
                 
                 console.log(reduceAge)
+
+                           // -----------------------
 
                 // Get Total Years for Each companys. 
                    const totalYears = companies.reduce(function (accumulator, company, index) {
@@ -330,7 +332,7 @@ let groupedPeople = groupBy(people, 'age')
 
 
 
-    //  ----------  Remove Duplicate using Reduce------------
+    //  ----------  Remove Duplicate using REDUCE------------
     let myArray = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd']
 let myOrderedArray = myArray.reduce(function (accumulator, currentValue) {
   if (accumulator.indexOf(currentValue) === -1) {
@@ -381,6 +383,13 @@ let orderAge = ages.sort(function (a, b) {
   
    
    =================*/
+  //  ---------- another Way to use SORTING for array of Objects
+
+  const sortCompanyAge  =(arr) => {
+     
+ return arr.sort((a,b) => b.start-a.start) 
+
+
 
   //-------------------End of SORT----------------
 
@@ -563,7 +572,7 @@ const checkSlice = (arr) => { return arr.slice(3, 4) }
 let getLengthOfAge = (arr) => {
   let container = []
   
-  console.log(arr.length) // => 3
+  console.log(arr.length) // => 1,2, 3
   
   for(let index = 0; index < arr.length; index++){
   console.log(index)  //=> 0,1,2,
