@@ -10,6 +10,20 @@ let addNum = (num) => {
   
 console.log(addNum([2,5,6,7])) //> 20
 
+
+ /*  We can also write it like this. 
+
+ const addAllNum = (num) => {
+  return  num.reduce(function (acc, currentVal) {
+     return  acc + currentVal
+   
+     })
+  }
+  
+ 
+ 
+ */
+
  // solution  2
 // function addAll(...rest) {
 //      //using rest oprator. 
@@ -72,7 +86,7 @@ console.log(addNum([2,5,6,7])) //> 20
     }
     
     console.log(sumOfPrimeNum(10))
-  
+
 //--------------------------------------------------------------------
 // CHALLENGE 3: SEEK & DESTROY
 
@@ -90,9 +104,8 @@ const seekAndDestroy = (arr, ...rest) => {
 
 //Sort By Height. 
 // Some people are standing in a row in a park. 
-    //There are trees between them which cannot be moved.
-    //Your task is to rearrange the people by their heights in a non-descending(smallest- larget) 
-    // order without moving the trees.
+   
+
     
     let peopleAndTrees = [-1, 150, 190, 170, -1, -1, 160, 180]
  
@@ -113,8 +126,7 @@ const seekAndDestroy = (arr, ...rest) => {
       // Sort the people from Smallest to Largets.
          let sortedPeople = peopleArr.sort((a,b) => a -b)
       
-      // Concatenat them where Tree stay where it is, And the new 
-      //Sorted Height People... Stand in the Gap. USe ForEach
+      //Sorted Height People... Stand in the Gap. USe ForEach and Slice on sorted people
       
       treeArr.forEach(function(element,index){
         

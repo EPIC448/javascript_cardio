@@ -97,6 +97,7 @@ function maxCharacter(str) {
   let emptyObj = {};
   for (const char of str) {
     // Note make sure to use "OF"...
+    // If the EMPTYOBJECT DOES NOT HAVE  the Char in it. 
     (!emptyObj[char]) ? emptyObj[char] = 1 : emptyObj[char]++
     // return emptyObj we had to Mute this SO to use in other varible 
     
