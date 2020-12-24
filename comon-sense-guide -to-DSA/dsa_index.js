@@ -13,25 +13,32 @@ let  matrixTest = [[1,3,5,7],[10,11,16,20],[23,30,34,50]], target = 13
 
 const searchMatrix = (matrix, target) => {
     let flatMatrix = matrix.flat()
-    let left = 0
-    let right = flatMatrix.length -1
+    //.sort((a,b) => a-b)
+      //let sortedFlatArray = flatMatrix.sort((a,b) => a-b)
+      //console.log(flatMatrix) // [1, 3, 5, 7, 10, 11, 16, 20, 23, 30, 34, 50]
+
+
+    let left = 0, right = flatMatrix.length -1
   //console.log(flatMatrix)
     while(left <= right){
-        let mid = Math.floor((right + left)/2);
+        let mid = Math.floor((right + left  )/2 );
 
-        if(flatMatrix[mid] === target) return true;
-
-        if(flatMatrix[mid] <= target){
-            left = flatMatrix[mid] +  1
+        if(flatMatrix[mid] === target){ 
+            return true
+        }else if (flatMatrix[mid] <= target){
+            right --
+        
+           
         } else
-            right = flatMatrix[mid] - 1
+             left ++
+
         
     }
     return false
 
 }
 
-//console.log(searchMatrix(matrixTest,7) )
+console.log(searchMatrix(matrixTest,13) )
 
 
 //Leet Code ..(leetcode 345. Reverse Vowels of a String) ---- Working properly -----
@@ -62,7 +69,7 @@ var reverseVowels = function(s) {
 };
 
 let  Input = "leetcode" , Output = "leotcede"
-console.log(reverseVowels(Input))
+//console.log(reverseVowels(Input))
 
 
 // =====  Binary search working========
@@ -87,4 +94,4 @@ const binarySearch = (array, target) => {
   return false
 }
 
-console.log(binarySearch([5,3,1,2,5,6,7], 3) )
+//console.log(binarySearch([5,3,1,2,5,6,7], 3) )
