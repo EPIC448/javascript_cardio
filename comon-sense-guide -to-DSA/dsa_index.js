@@ -17,18 +17,14 @@ const searchMatrix = (matrix, target) => {
     let right = flatMatrix.length -1
   //console.log(flatMatrix)
     while(left <= right){
-        let mid =Math.floor((right + left)/2);
+        let mid = Math.floor((right + left)/2);
 
         if(flatMatrix[mid] === target) return true;
 
         if(flatMatrix[mid] <= target){
             left = flatMatrix[mid] +  1
-        } else if(flatMatrix[mid] >= target){
+        } else
             right = flatMatrix[mid] - 1
-
-        }else{
-            console.log("Cant find")
-        }
         
     }
     return false
@@ -68,3 +64,27 @@ var reverseVowels = function(s) {
 let  Input = "leetcode" , Output = "leotcede"
 console.log(reverseVowels(Input))
 
+
+// =====  Binary search working========
+const binarySearch = (array, target) => {
+
+ let sortedArray = array.sort()
+ 
+  let left = 0, right = array.length -1 
+   
+  while( left <= right) {
+
+    let midpoint = Math.floor((left + right / 2))
+  
+   
+  if(sortedArray[midpoint] === target) return true
+
+  if(target < sortedArray[midpoint]) {
+      right = sortedArray[midpoint] -1
+  }else
+      left = sortedArray[midpoint] + 1
+ }
+  return false
+}
+
+console.log(binarySearch([5,3,1,2,5,6,7], 3) )
