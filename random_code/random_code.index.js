@@ -161,3 +161,97 @@ let A = [1,1,1,1,0,0]
 solution(A)
 
 //------- Code is Working---- but need Better understanding ---
+
+const removePalindromeSub = s => {
+    if (s.length === 0) return 0;
+    /// Using the two pointer method
+    for (let left = 0, right = s.length - 1; left < right; ++left, --right) {
+      if (s[left] !== s[right]) return 2;
+    }
+    return 1;
+  };
+  
+  console.log(removePalindromeSub("baabb"))
+
+
+
+
+  ///
+
+  /** LeetCode.  1418.......... Display Table of Food Orders in a Restaurant. Using HashTable. 
+ // Need to Work on and Review it. 
+  * @param {string[][]} orders
+ * @return {string[][]}
+ */
+var displayTable = function(orders) {
+    
+    
+    let tables = {} // hash
+     let foodArray = []
+    // let emptyArray = []
+     let answer = []
+      
+     for(let i = 0; i < orders.length; i++){
+            
+         // array of food. 
+         if(!foodArray.includes(orders[i][2])) {
+             foodArray.push(orders[i][2])
+         } 
+            
+         let tableNum = orders[i][1]
+          
+    // Tables Num as keys... Creating Hash within the First Hash. 
+        if(!tables[tableNum]){
+               tables[tableNum] = {}
+        }
+               // if  (order[i][2]) --- This is your Food.
+         let foodOrdered = orders[i][2] 
+         
+         
+           if(!tables[tableNum][foodOrdered ]){
+                    tables[tableNum][foodOrdered ] = 1
+                }else{
+                    tables[tableNum][foodOrdered] ++
+                }
+     }
+     
+    foodArray.sort()
+    foodArray.unshift("Table")
+    answer.push(foodArray)  // first Array in  our answer
+    
+    // Itreate over keys of nasted Hash tables.  
+    
+   Object.keys(tables).forEach(table =>{
+       
+     let newTable = []
+        newTable.push(table)
+       
+       //check each time in food is in our table using the key. 
+    // console.log(foodArray)
+
+            
+       
+        for(let i = 1; i < foodArray.length; i++){
+            
+            
+            if (tables[table][foodArray[i]]) {
+             newTable.push(String(tables[table][foodArray[i]])) 
+
+            } else{
+            
+             newTable.push('0') 
+                
+         }
+        }
+       
+       
+       answer.push(newTable)
+       
+     } )
+       
+  
+     
+    return answer
+   
+};
+
