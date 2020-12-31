@@ -106,7 +106,7 @@ const threeSum = (arr,Target) => {
 
 
 
- console.log (threeSum2([ 7, 11,1,1, 15], 10 ))
+ //console.log (threeSum2([ 7, 11,1,1, 15], 10 ))
 
 
 
@@ -171,7 +171,7 @@ const removePalindromeSub = s => {
     return 1;
   };
   
-  console.log(removePalindromeSub("baabb"))
+  //console.log(removePalindromeSub("baabb"))
 
 
 
@@ -180,8 +180,7 @@ const removePalindromeSub = s => {
 
   /** LeetCode.  1418.......... Display Table of Food Orders in a Restaurant. Using HashTable. 
  // Need to Work on and Review it. 
-  * @param {string[][]} orders
- * @return {string[][]}
+ 
  */
 var displayTable = function(orders) {
     
@@ -198,9 +197,9 @@ var displayTable = function(orders) {
              foodArray.push(orders[i][2])
          } 
             
-         let tableNum = orders[i][1]
+         let tableNum = orders[i][1] // which are the Table numbers
           
-    // Tables Num as keys... Creating Hash within the First Hash. 
+    // Tables Numbers as keys... Nesting an Hash within the First Hash. 
         if(!tables[tableNum]){
                tables[tableNum] = {}
         }
@@ -255,3 +254,100 @@ var displayTable = function(orders) {
    
 };
 
+
+// -------------------Implementing a Hash Table. -------------------
+
+ const hashStringToInt = (str, tableSize) => {
+     
+    // for each key, we want it to use the character-code using it representation.
+    let hash = 17
+    // iterate over the incomeing string and use the character code. 
+     for (let i = 0; i < str.length; i++) {
+          //we  divide by table size so that Table does not get to gib
+         hash = (hash * str.charCodeAt(i) )% tableSize
+     }  
+     
+     return hash;
+ }
+
+// Create a HashTable Class 
+ 
+ class HashTable {
+   
+     // It will Store stuff in Array.
+     table = new Array(4)  // we set a new Array so that we can set up the size of the array, 
+
+      //number of items in our elements. 
+     numItems = 0
+ // Sometimes when the Table gets too big. You may need to resize.. 
+    resize = () =>{
+       const newTable = new Array(this.table.length * 2);
+
+       this.table.forEach(item => {
+            if(item){
+                item.forEach(([key, value]) => {
+                    const idx = hashStringToInt(key, newTable.length);
+                    
+                    if(newTable[idx]) {
+                        newTable[idx].push([key, value]);
+                    }else {
+                                            newTable[idx] = [[key,value]]
+
+                    }
+
+                })
+            }
+       })
+       this.table = newTable
+    }
+   
+       
+    // lay out the structure for setItem and getItem. 
+   setItem = (key,value) => {
+       this.numItems++ 
+      // Creating a resize here. When we hit capcity of 80% resize
+      const loadFactor = this.numItems / this.table.length
+      
+      if(loadFactor > .8){
+          //resize
+          this.resize
+      }
+    // we turn the hash that is a string into int using a helper function.
+    const idx = hashStringToInt(key, this.table.length)
+    // we set it like this ti aviod collission 
+    if(this.table[idx]){
+        this.table[idx].push([key, value])
+
+    }else{
+        
+    this.table[idx] = [[key, value]] 
+    }
+   };
+      // lay out the structure for setItem and getItem. 
+
+    getItem = (key) => {
+        const idx = hashStringToInt(key, this.table.length)
+
+        if(!this.table[idx]){
+            return null
+        }
+        return this.table[idx].find(x => x[0] === key)[1]
+    };
+ }
+
+  const myTable = new HashTable
+  myTable.setItem('firstName', 'bob'); 
+  myTable.setItem('lastName', 'tim'); 
+  myTable.setItem('age', 5); 
+  myTable.setItem('dob', "12"); 
+  myTable.setItem('location', "NY"); 
+ 
+  console.log(myTable.table.length)
+
+  console.log(myTable.getItem('firstName'))
+  console.log(myTable.getItem('lastName'))
+  console.log(myTable.getItem('age'))
+
+  console.log(myTable.table.length)
+
+  console.log(myTable.getItem('location'))
