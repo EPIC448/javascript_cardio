@@ -281,7 +281,9 @@ displayTable(orders)
     let hash = 17
     // iterate over the incomeing string and use the character code. 
      for (let i = 0; i < str.length; i++) {
-          //we  divide by table size so that Table does not get to gib
+          //we  divide by table size so that Table does not get to big
+          // charCodeAt .... everyLetter has an numbers Attached to it. 
+//HUGE HINT Remeber  "%" returns the Reminder After a Dividing.  
          hash = (hash * str.charCodeAt(i) )% tableSize
      }  
      
@@ -297,7 +299,7 @@ displayTable(orders)
 
       //number of items in our elements. 
      numItems = 0
- // Sometimes when the Table gets too big. You may need to resize.. 
+ // Sometimes when the Table gets too small for what we have stored,. You may need to resize.. 
     resize = () =>{
        const newTable = new Array(this.table.length * 2);
 
@@ -351,6 +353,15 @@ displayTable(orders)
         }
         return this.table[idx].find(x => x[0] === key)[1]
     };
+
+
+      //implement a Delete aswell /// Recheck it.  
+      deleteItem = (key) => {
+        const idx =  hashStringToInt(key, this.table.length)
+        if(this.table[idx]){
+          return delete this.table[idx]
+          }
+      }
  }
 
   const myTable = new HashTable
@@ -364,16 +375,19 @@ displayTable(orders)
 
   console.log(myTable.getItem('firstName'))
   console.log(myTable.getItem('lastName'))
-//   console.log(myTable.getItem('age'))
+   console.log(myTable.getItem('age'))
 
 //   console.log(myTable.table.length)
 
-   console.log(myTable.getItem('location'))
+   console.log(myTable.deleteItem('age'))
 
-
+console.log(myTable)
  /*
   NOTE:  5 % 2 = Return the reminder .. 2
    Solve leet code. 215
    https://dev.to/foqc/the-water-jug-riddle-in-js-em1
 
    */
+
+
+  
