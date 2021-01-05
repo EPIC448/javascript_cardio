@@ -38,7 +38,7 @@ const searchMatrix = (matrix, target) => {
 
 }
 
-console.log(searchMatrix(matrixTest,13) )
+console.log(searchMatrix(matrixTest,4) )
 
 
 //Leet Code ..(leetcode 345. Reverse Vowels of a String) ---- Working properly -----

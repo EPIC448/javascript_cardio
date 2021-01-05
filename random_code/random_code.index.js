@@ -181,7 +181,25 @@ const removePalindromeSub = s => {
   /** LeetCode.  1418.......... Display Table of Food Orders in a Restaurant. Using HashTable. 
  // Need to Work on and Review it. 
  
+
  */
+  let orders = [
+      ["David","3","Ceviche"],["Corina","10","Beef Burrito"],["David","3","Fried Chicken"],
+  ["Carla","5","Water"],["Carla","5","Ceviche"],["Rous","3","Ceviche"]
+  ]
+
+  //expected Output
+
+
+  /*
+  Output: [["Table","Beef Burrito","Ceviche","Fried Chicken","Water"],
+            ["3",   "0",  "2",      "1",                        "0"],
+            ["5",   "0",  "1",      "0",                         "1"],
+            ["10",  "1",  "0",     "0",                          "0"]
+] 
+  
+  */
+
 var displayTable = function(orders) {
     
     
@@ -218,28 +236,28 @@ var displayTable = function(orders) {
     foodArray.unshift("Table")
     answer.push(foodArray)  // first Array in  our answer
     
-    // Itreate over keys of nasted Hash tables.  
-    
+    // Itreate over keys of nasted Hash tables.
+    // We need to work on this parts.  
+
    Object.keys(tables).forEach(table =>{
-       
+            
+
      let newTable = []
         newTable.push(table)
        
        //check each time in food is in our table using the key. 
-    // console.log(foodArray)
 
-            
+ 
        
         for(let i = 1; i < foodArray.length; i++){
-            
-            
+                    
+
             if (tables[table][foodArray[i]]) {
              newTable.push(String(tables[table][foodArray[i]])) 
 
             } else{
             
              newTable.push('0') 
-                
          }
         }
        
@@ -253,9 +271,9 @@ var displayTable = function(orders) {
     return answer
    
 };
+displayTable(orders)
 
-
-// -------------------Implementing a Hash Table. -------------------
+// -------------------Implementing a Hash Table from Scratch . -------------------
 
  const hashStringToInt = (str, tableSize) => {
      
@@ -342,12 +360,20 @@ var displayTable = function(orders) {
   myTable.setItem('dob', "12"); 
   myTable.setItem('location', "NY"); 
  
-  console.log(myTable.table.length)
+//   console.log(myTable.table.length)
 
   console.log(myTable.getItem('firstName'))
   console.log(myTable.getItem('lastName'))
-  console.log(myTable.getItem('age'))
+//   console.log(myTable.getItem('age'))
 
-  console.log(myTable.table.length)
+//   console.log(myTable.table.length)
 
-  console.log(myTable.getItem('location'))
+   console.log(myTable.getItem('location'))
+
+
+ /*
+  NOTE:  5 % 2 = Return the reminder .. 2
+   Solve leet code. 215
+   https://dev.to/foqc/the-water-jug-riddle-in-js-em1
+
+   */
