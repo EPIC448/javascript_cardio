@@ -51,8 +51,29 @@ const isPalindrome=(str) => {
 
 //console.log(isPalindrome("bed")) // => false
 // console.log(isPalindrome("mom")) // => true 
+// ------------------------Simpler  version of [isPalindrome]------
 
+const isPalindrome = (str) => {
+    
+  let leftIndex = 0, rightIndex = str.length -1;
+  
+  //iterate until left index reach middle index
+  while(leftIndex < str.length/2){
+    
+    // if character on the left does not equal charcter on the right,
+    //it is not a Palindrome
+     if(str[leftIndex] !== str[rightIndex]) return false;
+      
+      //move leftINdex 1 to the right
+      leftIndex ++
+         //move rightINdex 1 to the left
+      rightIndex --
+    
+    }
+    return true
+}
 
+console.log(isPalindrome("dirtyroom"))
 // ----------------------------------
 // CHALLENGE 3: REVERSE AN INTEGER
 // Return an integer in reverse

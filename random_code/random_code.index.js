@@ -391,3 +391,69 @@ console.log(myTable)
 
 
   
+//    LeetCode
+var countBattleships = function(board) {
+    let count = 0
+    for (let i =0; i < board.length; i++) {
+        for (let j = 0; j < board[i].length; j++) {
+            if (board[i][j] === "X") {
+                let right = j + 1 < board[0].length ? j + 1 : null
+                if (right) {
+                    if(board[i][j + 1] === "X") {
+                        continue
+                    }
+                }
+                let bottom = i + 1 < board.length ? i + 1 : null
+                if (bottom) {
+                    if(board[i + 1][j] === "X") {
+                        continue
+                    }
+                }
+               count += 1
+            }
+        }
+    }
+    return count
+};
+
+// LeetCode 35
+var searchInsert = function(nums, target) {
+    if(target >= nums[Math.floor(nums.length/2)]){
+                 //console.log(nums[Math.floor(nums.length/2)]) // index of 2 which is 5 in our array .
+        for(let i = Math.floor(nums.length/2) ; i < nums.length; i ++){
+            if(target<= nums[i]){
+                return i
+            }
+        }
+    }
+    for(let i = 0; i < nums.length ; i ++){
+        if(target <= nums[i]){
+            return i
+        }
+    }
+    return nums.length
+};
+
+// Input: nums = [1,3,5,6], target = 7
+// Output: 4
+// Input: nums = [1,3,5,6], target = 5
+// Output: 2
+
+// ------------------------------------------
+// leetCode - 1408
+var stringMatching = function(words) {
+    let answer = []
+    
+     for(let i = 0; i < words.length; i++) {
+       for(let j = 0; j < words.length; j++) {   
+           
+           // if statements
+           if(words[i].includes(words[j]) && i !== j) {
+                if(!answer.includes(words[j])) {
+                         answer.push(words[j])
+                }
+           }
+       }
+     }
+    return answer
+};
