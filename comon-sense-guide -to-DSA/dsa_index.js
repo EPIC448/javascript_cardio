@@ -5,93 +5,74 @@ const test = "Working test"
 console.log( test)
 
 
-//Leet code Search a 2D matrix.. Question 74
 
-let  matrixTest = [[1,3,5,7],[10,11,16,20],[23,30,34,50]], target = 13
-//Output: false
+//==================================================================================================================
+// Chp8. HashTable...... DSA Code Preparation.s 
 
+/*
 
-const searchMatrix = (matrix, target) => {
-    let flatMatrix = matrix.flat()
-    //.sort((a,b) => a-b)
-      //let sortedFlatArray = flatMatrix.sort((a,b) => a-b)
-      //console.log(flatMatrix) // [1, 3, 5, 7, 10, 11, 16, 20, 23, 30, 34, 50]
+  write function return intersection of 2 array. [i.e  [1,2,3,4,5], [0,2,4,6,8]] => [2,4]
+  should be in O[N]
 
-
-    let left = 0, right = flatMatrix.length -1
-  //console.log(flatMatrix)
-    while(left <= right){
-        let mid = Math.floor((right + left  )/2 );
-
-        if(flatMatrix[mid] === target){ 
-            return true
-        }else if (flatMatrix[mid] <= target){
-            right --
-        
-           
-        } else
-             left ++
-
-        
-    }
-    return false
-
-}
-
-console.log(searchMatrix(matrixTest,4) )
-
-
-//Leet Code ..(leetcode 345. Reverse Vowels of a String) ---- Working properly -----
-var reverseVowels = function(s) {
-    let vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]
-    s = s.split("")
-    let left = 0
-    let right = s.length - 1
-
-    while (left < right) {
-        if (!vowels.includes(s[left])) {
-            left++
-        }
-        if (!vowels.includes(s[right])) {
-            right--
-        }
-        if (vowels.includes(s[left]) && vowels.includes(s[right])) {
-            let temp = s[left]
- // This is where the swipe occurs
-            s[left] = s[right]
-            s[right] = temp
-            left++
-            right--
-        }
-    }
-    s = s.join("")
-    return s
-};
-
-let  Input = "leetcode" , Output = "leotcede"
-//console.log(reverseVowels(Input))
-
-
-// =====  Binary search working========
-const binarySearch = (array, target) => {
-
- let sortedArray = array.sort()
- 
-  let left = 0, right = array.length -1 
-   
-  while( left <= right) {
-
-    let midpoint = Math.floor((left + right / 2))
+*/
+ const arrInsterSecton = (arr1, arr2) => {
+  let intersection = []
+  let hashTable = {}
   
-   
-  if(sortedArray[midpoint] === target) return true
+  for (let i = 0; i < arr1.length; i++) {
+            
+        hashTable[arr1[i]] = true
+      
+  }
+    for(let j = 0; j < arr2.length; j++){
+        if(hashTable[arr2[j]]) intersection.push(arr2[j])
+    }
+// console.log(hashTable)
+   return intersection
 
-  if(target < sortedArray[midpoint]) {
-      right = sortedArray[midpoint] -1
-  }else
-      left = sortedArray[midpoint] + 1
  }
-  return false
-}
+  // console.log(arrInsterSecton([1,2,3,4,5], [0,2,4,6,8]) )  // =>[2,4]  it working
 
-//console.log(binarySearch([5,3,1,2,5,6,7], 3) )
+
+// ================ Problem 2 [accept array of strings and return the first duplicate it finds. ]  ["a", "b", "c", "d", "c", "e"]
+const duplicateValue = str => {
+   let hashMap = {}
+
+   for(let i = 0; i < str.length; i++) {
+       //console.log(str[i])
+       if(!hashMap[str[i]]){
+           // becasue we checking if it is present. I didnt need to use a .include here.  
+        hashMap[str[i]] = true
+       }else{
+           
+        return str[i]
+       }
+   }
+   
+  }
+console.log(duplicateValue(["a", "b", "c", "d", "c", "e"]) )  //=> "c"    Working
+
+
+//=---------------- Solution 4. ---------------
+/*
+
+ return the first non-duplicate character in a string of "minimum"
+*/
+const  returnFirstDuplicate = str =>{
+let hash = []
+  for (let i = 0; i < str.length; i++) {
+      //console.log(val)
+      if(!hash[str[i]]){
+        hash[str[i]] = 1
+       } else{
+        hash[str[i]]++
+       }
+       
+       for(let j = 0; j < str.length; j++){
+       if(hash[str[j]] == 1) return str[j]
+   }
+
+  }
+   
+}
+console.log(returnFirstDuplicate("minimum") )

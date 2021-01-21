@@ -457,3 +457,139 @@ var stringMatching = function(words) {
      }
     return answer
 };
+
+
+
+// leetcode 90.  
+/**
+ * Given a collection of integers that might contain duplicates, nums, return all possible subsets (the power set).
+
+  Solution :  https://www.google.com/search?q=subset+ii+javascript&oq=subset+ii+javascript&aqs=chrome..69i57j0i13i457j0i22i30l4.14659j1j7&sourceid=chrome&ie=UTF-8
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+var subsetsWithDup = function(nums) {
+    nums.sort((a,b) => a-b)
+    let answer = [[]]
+    // set up pointers with length of answer array as the end (answer array grows with each  loop) and start for inner loop which can be used to skip duplicates
+    let end
+    let start
+    //outer loop resets start to 0 each time for when duplicates are not found
+    for(let i = 0; i < nums.length; i++){
+        start = 0
+        // if after moving i to next index & the previous was a duplicate, we move start of the
+        //inner loop to the end of the answer array, causing the inner loop to skip the array
+        //we've already pushed
+        if(nums[i] === nums[i -1]) {
+            start = end
+        }
+        // sets our break condition for the inner loop to the current length of the answer
+        // array before we increase it
+        end = answer.length
+        for(let j = start; j < end; j++){
+            //each time we loop through the arrays in the answer array we make a copy of the
+            //current array and push in a new array using the current index. 
+            //the first loop copies the empty array, and then pushes in the first number into 
+            //that empty array, so if the first number is 1, you have [[], [1]], 
+            //the answer array is now length 2, so the next time it loops starting at the 
+            //second index, it pushes it into the empty array, and then the array with 1 in it, 
+            //since it loops twice. so if the second number is 2, 
+            //you end up with [[], [1], [2], [1,2]]
+            answer.push([...answer[j], nums[i]])
+        }
+    }
+    return answer
+};
+
+//=====================================================
+
+//Leet Code ..(leetcode 345. Reverse Vowels of a String) ---- Working properly -----
+var reverseVowels = function(s) {
+    let vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]
+    s = s.split("")
+    let left = 0
+    let right = s.length - 1
+
+    while (left < right) {
+        if (!vowels.includes(s[left])) {
+            left++
+        }
+        if (!vowels.includes(s[right])) {
+            right--
+        }
+        if (vowels.includes(s[left]) && vowels.includes(s[right])) {
+            let temp = s[left]
+ // This is where the swipe occurs
+            s[left] = s[right]
+            s[right] = temp
+            left++
+            right--
+        }
+    }
+    s = s.join("")
+    return s
+};
+
+let  Input = "leetcode" , Output = "leotcede"
+//console.log(reverseVowels(Input))
+
+
+// =====  Binary search working========
+const binarySearch = (array, target) => {
+
+ let sortedArray = array.sort()
+ 
+  let left = 0, right = array.length -1 
+   
+  while( left <= right) {
+
+    let midpoint = Math.floor((left + right / 2))
+  
+   
+  if(sortedArray[midpoint] === target) return true
+
+  if(target < sortedArray[midpoint]) {
+      right = sortedArray[midpoint] -1
+  }else
+      left = sortedArray[midpoint] + 1
+ }
+  return false
+}
+
+//console.log(binarySearch([5,3,1,2,5,6,7], 3) )
+// ============================================
+
+//Leet code Search a 2D matrix.. Question 74
+
+let  matrixTest = [[1,3,5,7],[10,11,16,20],[23,30,34,50]], target = 13
+//Output: false
+
+
+const searchMatrix = (matrix, target) => {
+    let flatMatrix = matrix.flat()
+    //.sort((a,b) => a-b)
+      //let sortedFlatArray = flatMatrix.sort((a,b) => a-b)
+      //console.log(flatMatrix) // [1, 3, 5, 7, 10, 11, 16, 20, 23, 30, 34, 50]
+
+
+    let left = 0, right = flatMatrix.length -1
+  //console.log(flatMatrix)
+    while(left <= right){
+        let mid = Math.floor((right + left  )/2 );
+
+        if(flatMatrix[mid] === target){ 
+            return true
+        }else if (flatMatrix[mid] <= target){
+            right --
+        
+           
+        } else
+             left ++
+
+        
+    }
+    return false
+
+}
+
+console.log(searchMatrix(matrixTest,4) )
