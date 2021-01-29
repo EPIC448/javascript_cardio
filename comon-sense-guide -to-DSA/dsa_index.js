@@ -76,3 +76,5 @@ let hash = []
    
 }
 console.log(returnFirstDuplicate("minimum") )
+
+/// Next time we work on a Branchs
