@@ -593,3 +593,36 @@ const searchMatrix = (matrix, target) => {
 }
 
 console.log(searchMatrix(matrixTest,4) )
+
+/// Next time we work on a Branch
+
+
+// The Exaxmple is for Stack and Queues. Very important
+
+// Valid Parentheses
+// let s = (x = y: [1,2,3])
+var isValid = function(s) {
+    const stack = [];
+    const brackets = {‘(’: ‘)’, ‘{’: ‘}’, ‘[’: ‘]’}
+
+    for (let i = 0; i < s.length; i++) {
+        // Push all open parentheses onto stack
+        if (brackets[s[i]]) stack.push(s[i]);
+        // Check if you reach a closing bracket
+        if ([‘)’, ‘]’, ‘}’].includes(s[i])){
+            let bracket = stack.pop();
+            // check if the last element in the stack is the corrrect open bracket
+
+           
+            if (brackets[bracket] === s[i]) continue;
+        //    The above line is indicating that 
+        //   brackets {'(', '{', '['} which are keys now will have bracket()which were popped off a.k.a([‘)’, ‘]’, ‘}’]) in it?
+        
+        //      And s[i] will be what after each iteration?  
+            else return false;
+        }
+    }
+    // check if there is anything left in the stack
+    // If there is not, return true, else return false
+    return stack.length === 0;
+};
