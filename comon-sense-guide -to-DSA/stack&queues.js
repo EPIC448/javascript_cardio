@@ -66,3 +66,47 @@ const reverse = (str) => {
    }
    
    // console.log(reverse("john"))  // nhoj.. working. 
+
+  ------------ // Lint Code execrise. 
+   // make sure the Code has a closing bracket
+// Take a string of bracket, make sure that the close brackets match the 
+//opening onces. 
+
+const codeLinter = (str) => {
+  
+    let 
+     openBracket = ["(", "{", "[" ], // represented as array
+     closeBracket = [")", "}", "]" ],
+     matchedBracket = {"(":")", "{": "}", "[":"]"}
+     
+     //store all open bracket as Hash so we can use it as keys
+     let stacks = []
+     
+     //iterate over income strings and store the open brackets as keys in hashMap
+     for(const element in str){
+             
+           
+        if(openBracket.includes(str[element])){
+          stacks.push(str[element])
+        
+  
+          }
+          
+          if(closeBracket.includes(str[element]) ){
+             let popBracket =+ stacks.pop()
+             console.log(popBracket)
+            }
+            
+            if(matchedBracket[element] === str[element]) continue
+            
+            return false
+       }
+  }
+  
+  console.log(codeLinter(["]", "(", "{", "]" ]))
+  
+  
+  
+  /* 
+   Queues
+  */
