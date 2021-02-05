@@ -1,8 +1,7 @@
 // Chapter 1. 
 
 //printEvenNum(100)
-const test = "Working test"
-console.log( test)
+
 
 
 
@@ -75,6 +74,35 @@ let hash = []
   }
    
 }
-console.log(returnFirstDuplicate("minimum") )
+console.log(returnFirstDuplicate("minimum") ) // => m
 
-/// Next time we work on a Branchs
+// Come back and resolve
+// function that accept all letter of alphbets, execpt 1, return the missing letter. 
+
+const missingLetter = (str) => {
+
+  let alphbets = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]//a-z
+
+  let hashMap = {}
+  //put the str in an hash
+   for (const iterator of str) {
+      if(!hashMap[iterator]){
+        hashMap[iterator] = "true"
+      }
+      console.log(hashMap)
+      // we iterate over the alphbet value with a loop and see if it is true in in hashmap with strings stored.
+      for(let i = 0; i < alphbets.length; i++){
+                console.log(str)
+
+        if(!hashMap[alphbets[i]]){
+          return alphbets[i]
+        }
+      }
+
+   }
+  
+}
+console.log(missingLetter("a","b","c","d","e","g","h") )
+
+const test = ("Working test") 
+console.log( test)
