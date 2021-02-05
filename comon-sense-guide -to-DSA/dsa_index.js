@@ -49,7 +49,7 @@ const duplicateValue = str => {
    }
    
   }
-console.log(duplicateValue(["a", "b", "c", "d", "c", "e"]) )  //=> "c"    Working
+//console.log(duplicateValue(["a", "b", "c", "d", "c", "e"]) )  //=> "c"    Working
 
 
 //=---------------- Solution 4. ---------------
@@ -74,7 +74,7 @@ let hash = []
   }
    
 }
-console.log(returnFirstDuplicate("minimum") ) // => m
+//console.log(returnFirstDuplicate("minimum") ) // => m
 
 // Come back and resolve
 // function that accept all letter of alphbets, execpt 1, return the missing letter. 
@@ -102,7 +102,6 @@ const missingLetter = (str) => {
    }
   
 }
-console.log(missingLetter("a","b","c","d","e","g","h") )
+//console.log(missingLetter("a","b","c","d","e","g","h") )
 
-const test = ("Working test") 
-console.log( test)
+
