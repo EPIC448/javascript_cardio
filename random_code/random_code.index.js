@@ -592,12 +592,12 @@ const searchMatrix = (matrix, target) => {
 
 }
 
-console.log(searchMatrix(matrixTest,4) )
+// console.log(searchMatrix(matrixTest,4) )
 
 /// Next time we work on a Branch
 
 
-// The Exaxmple is for Stack and Queues. Very important
+//-======= The Exaxmple is for Stack and Queues. Very important
 
 // Valid Parentheses
 // let s = (x = y: [1,2,3])
@@ -629,4 +629,9 @@ var isValid = function(s) {
     return stack.length === 0;
 };
 
-console.log(isValid)
+
+let s = "()[{{}" // false
+let s1 = "{[]}" // true
+
+
+console.log(isValid (s1))
