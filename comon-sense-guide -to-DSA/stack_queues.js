@@ -13,6 +13,9 @@ Sources for Details : https://www.javascripttutorial.net/javascript-stack/
    Like most Data structure, You have to implement yourself. 
 
 */
+
+ let stackFile = "HelloWorld"
+ console.log(stackFile)
 //Stacks
  class Stack {
      // has a bucket that we will keep the elements in.
@@ -37,14 +40,14 @@ Sources for Details : https://www.javascripttutorial.net/javascript-stack/
  }
 
  const stack = new Stack()
- stack.push(3)
- stack.push(4)
- stack.push(6)
- stack.push("erae")
+//  stack.push(3)
+//  stack.push(4)
+//  stack.push(6)
+//  stack.push("erae")
 
 
  const test = ("Working test") 
-console.log( test) // File not runing, need to be tested.
+//console.log( test) // File not runing, need to be tested.
 
 
 // ------------ Reverse a String. ---------
@@ -67,44 +70,44 @@ const reverse = (str) => {
    
    // console.log(reverse("john"))  // nhoj.. working. 
 
-  ------------ // Lint Code execrise. 
+//   ------------ // Lint Code execrise. 
    // make sure the Code has a closing bracket
 // Take a string of bracket, make sure that the close brackets match the 
 //opening onces. 
+var codeLinter = function(s) {
+    const stack = [];
+    
+    // Using the open brackets as Keys and close brackets as values
+    const brackets = {"(":")", "{":"}", "[":"]"}
 
-const codeLinter = (str) => {
-  
-    let 
-     openBracket = ["(", "{", "[" ], // represented as array
-     closeBracket = [")", "}", "]" ],
-     matchedBracket = {"(":")", "{": "}", "[":"]"}
-     
-     //store all open bracket as Hash so we can use it as keys
-     let stacks = []
-     
-     //iterate over income strings and store the open brackets as keys in hashMap
-     for(const element in str){
-             
+    for (let i = 0; i < s.length; i++) {
+        // Push all open parentheses onto stack
+        if (brackets[s[i]]) stack.push(s[i]);
+        // Check if you reach a closing bracket
+        if ([ ")", "}", "]"].includes(s[i])){
+            let bracket = stack.pop();
+            // check if the last element in the stack is the corrrect open bracket
+ console.log(brackets[bracket])
            
-        if(openBracket.includes(str[element])){
-          stacks.push(str[element])
+            if (brackets[bracket] === s[i]) continue;
+        //    The above line is indicating that 
+        //   brackets {'(', '{', '['} which are keys now will have bracket()which were popped off a.k.a([‘)’, ‘]’, ‘}’]) in it?
         
-  
-          }
-          
-          if(closeBracket.includes(str[element]) ){
-             let popBracket =+ stacks.pop()
-             console.log(popBracket)
-            }
-            
-            if(matchedBracket[element] === str[element]) continue
-            
-            return false
-       }
-  }
-  
-  console.log(codeLinter(["]", "(", "{", "]" ]))
-  
+        //      And s[i] will be what after each iteration?  
+            else return false;
+        }
+    }
+    // check if there is anything left in the stack
+    // If there is not, return true, else return false
+    return stack.length === 0;
+};
+
+
+let s = "()[{{}" // false
+let s1 = "{[]}" // true
+
+
+console.log(codeLinter (s1)) // Working  great. And return correct answer
   
   
   /* 

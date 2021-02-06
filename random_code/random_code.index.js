@@ -614,7 +614,7 @@ var isValid = function(s) {
         if ([ ")", "}", "]"].includes(s[i])){
             let bracket = stack.pop();
             // check if the last element in the stack is the corrrect open bracket
-
+ console.log(brackets[bracket])
            
             if (brackets[bracket] === s[i]) continue;
         //    The above line is indicating that 
