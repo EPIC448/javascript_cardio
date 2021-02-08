@@ -14,6 +14,8 @@ Sources for Details : https://www.javascripttutorial.net/javascript-stack/
 
 */
 
+console.log("testing")
+
  let stackFile = "HelloWorld"
  console.log(stackFile)
 //Stacks
@@ -46,7 +48,7 @@ Sources for Details : https://www.javascripttutorial.net/javascript-stack/
 //  stack.push("erae")
 
 
- const test = ("Working test") 
+ //const test = ("Working test") 
 //console.log( test) // File not runing, need to be tested.
 
 
@@ -87,7 +89,7 @@ var codeLinter = function(s) {
         if ([ ")", "}", "]"].includes(s[i])){
             let bracket = stack.pop();
             // check if the last element in the stack is the corrrect open bracket
- console.log(brackets[bracket])
+ //console.log(brackets[bracket])
            
             if (brackets[bracket] === s[i]) continue;
         //    The above line is indicating that 
@@ -107,9 +109,80 @@ let s = "()[{{}" // false
 let s1 = "{[]}" // true
 
 
-console.log(codeLinter (s1)) // Working  great. And return correct answer
+//console.log(codeLinter (s1)) // Working  great. And return correct answer
   
   
   /* 
-   Queues
+   ---------------------- Queues-------------------------------
+    This uses the First In First Out (FIFO) Principle.
+     Think of the line at the DMV.  First come, first serivce
+
+      Array = 5,9,100,2,4
+            last            first
+
+          to remove the first element in the array we use .shift
+
   */
+//
+
+ class Queues {
+    
+    constructor() {
+       this.stack = []
+       this.size = 10
+       this.rear = 0
+    }
+   
+
+  //Add or enqueue
+     add = (element) =>{
+       // check to make sure that stack is not full
+       if(this.rear < this.size){
+           this.stack[this.rear] = element
+         this.rear++
+    }
+     // Get the length of the queues.
+    retrun (this.rear)
+  }
+
+  //remove or dequeue()
+    remove = (element) =>{
+        if(this.isEmpty() === false){
+        this.rear = this.rear-1;
+        return this.data.shift()
+        }
+    }
+
+    search = (element) =>{
+        return this.stack.lastIndexOf(element)
+    }
+    
+    print(){
+        for(let i = 0; i< this.rear; i++){
+            console.log(this.data[i])
+        }
+    }
+ }
+ 
+ //const queues = new Queues()
+  //console.log(queues.add(3) ) // Not working Yet. Invesitage. 
+
+ //  stack.push(4)
+ //  stack.push(6)
+ //  stack.push("erae")
+
+//  ---------------------------Reverse a String using Queues-------
+const reverse = (str) => {
+    let queues = []
+
+    for(let i = 0; i < str.length; i++){
+        queues.push(str[i])
+    }
+    let reverseStr = ""
+    while(queues.length > 0){
+         reverseStr = queues.pop()
+         console.log(reverseStr)  //=>retepdcba
+    }
+}
+
+console.log(reverse("abcdpeter")) //> Need to work on this. 
