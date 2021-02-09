@@ -125,7 +125,9 @@ let s1 = "{[]}" // true
 
           to remove the first element in the array we use .shift
 
+           //Need a little more practice
   */
+
 //
 
  class Queues {
@@ -177,9 +179,10 @@ let s1 = "{[]}" // true
 
    queues.search(4) //> return the index of the searched iterms.  in this case index 1
   queues.remove(6) //> remove 3rd index. 
-  console.log(queues.print()) //=>[ 3, 4, 6, 'erae' ]
+  //console.log(queues.print()) //=>[ 3, 4, 6, 'erae' ]
 
-//  ---------------------------Reverse a String using Queues-------
+//  ---------------------------Reverse a String using Queues------
+
 const reverse_V2 = (str) => {
     let queues = []
 
@@ -188,9 +191,10 @@ const reverse_V2 = (str) => {
     }
     let reverseStr = ""
     while(queues.length > 0){
-         reverseStr = queues.pop()
-         console.log(reverseStr)  //=>retepdcba
+         reverseStr += queues.pop() // => reverseStr = reverseStr + queues.pop()
+           // else it will only retun the first element in that array
     }
+    return reverseStr
 }
 
-//console.log(reverse_V2("abcdpeter")) //> Need to work on this. 
+console.log(reverse_V2("abcdpeter") )//> Need to work on this. 
