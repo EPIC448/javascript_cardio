@@ -1,4 +1,7 @@
-/* Notes: both are Array data structures with restrictions 
+/* 
+ To run, Type: node "name of file"
+
+Notes: both are Array data structures with restrictions 
 Sources for Details : https://www.javascripttutorial.net/javascript-stack/
 
  Stacks: follows Last In First Out principle(LIFO). Such as the Stack of Dishes
@@ -14,7 +17,6 @@ Sources for Details : https://www.javascripttutorial.net/javascript-stack/
 
 */
 
-console.log("testing")
 
  let stackFile = "HelloWorld"
  console.log(stackFile)
@@ -70,7 +72,7 @@ const reverse = (str) => {
     
    }
    
-   // console.log(reverse("john"))  // nhoj.. working. 
+   // console.log(reverse("john"))  // nhoj.. working correctly. 
 
 //   ------------ // Lint Code execrise. 
    // make sure the Code has a closing bracket
@@ -119,6 +121,7 @@ let s1 = "{[]}" // true
 
       Array = 5,9,100,2,4
             last            first
+    follow in the  >>>>>>> direction        
 
           to remove the first element in the array we use .shift
 
@@ -131,6 +134,7 @@ let s1 = "{[]}" // true
        this.stack = []
        this.size = 10
        this.rear = 0
+       // Rear or  end of the Queues
     }
    
 
@@ -138,18 +142,19 @@ let s1 = "{[]}" // true
      add = (element) =>{
        // check to make sure that stack is not full
        if(this.rear < this.size){
-           this.stack[this.rear] = element
+           this.stack.unshift(element)
          this.rear++
     }
      // Get the length of the queues.
-    retrun (this.rear)
+    return (this.rear)
   }
 
   //remove or dequeue()
     remove = (element) =>{
-        if(this.isEmpty() === false){
+        
+        if(this.stack.length != 0){
         this.rear = this.rear-1;
-        return this.data.shift()
+        return this.stack.pop()
         }
     }
 
@@ -159,20 +164,23 @@ let s1 = "{[]}" // true
     
     print(){
         for(let i = 0; i< this.rear; i++){
-            console.log(this.data[i])
+            console.log(this.stack[i])
         }
     }
  }
  
- //const queues = new Queues()
-  //console.log(queues.add(3) ) // Not working Yet. Invesitage. 
+ const queues = new Queues() // working great
+ queues.add(3)   
+  queues.add(4)
+  queues.add(6)
+  queues.add("erae")
 
- //  stack.push(4)
- //  stack.push(6)
- //  stack.push("erae")
+   queues.search(4) //> return the index of the searched iterms.  in this case index 1
+  queues.remove(6) //> remove 3rd index. 
+  console.log(queues.print()) //=>[ 3, 4, 6, 'erae' ]
 
 //  ---------------------------Reverse a String using Queues-------
-const reverse = (str) => {
+const reverse_V2 = (str) => {
     let queues = []
 
     for(let i = 0; i < str.length; i++){
@@ -185,4 +193,4 @@ const reverse = (str) => {
     }
 }
 
-console.log(reverse("abcdpeter")) //> Need to work on this. 
+//console.log(reverse_V2("abcdpeter")) //> Need to work on this. 
