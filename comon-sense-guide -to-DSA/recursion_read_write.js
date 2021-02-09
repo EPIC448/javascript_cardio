@@ -18,32 +18,7 @@ Such as example .. just an example
 */
 
  console.log("test recursion code")
-
-
-//  ----------------- Factorial example----------
  
- const factorial = (num) => {
-   if(num === 1){ 
-       return 1
-   } else{
-    return    num * factorial(num -1)
-     /*
-              3 * factorial(3 -1)  =2
-               2 * factorial(2 -1) = 1
-               1 * factorial(1 -1) = 0
-               0 * factorial(0 -1) = 0 ... this is where we hit the base case.. 
-                                            than it start to add it all back up. the stack 
-
-      this shows sign of the LIFO  principle from "STACK" data structure. 
-       the last execustion  [0 * factorial(0 -1) = 0]  is POP off the stack as it goes back up the 
-       chain of command and add up the results recursively
-                
-               */
-                 
-   }
- } 
- //console.log(factorial(3))
-
 
  /*  Write  RECURSION
  All recursion most have a base case else, INFINITY Loop
@@ -60,3 +35,52 @@ Such as example .. just an example
   //  console.log(doubleArray([1,2,3,6,11], 0)) // need a little work. 
 
   //-------- Calculating Recursivly----------------
+  //  ----------------- Factorial example----------
+ 
+ const factorial = (num) => {
+    if(num === 1){ 
+        return 1
+    } else{
+     return    num * factorial(num -1)
+      /*
+               3 * factorial(3 -1)  =2
+                2 * factorial(2 -1) = 1
+                1 * factorial(1 -1) = 0
+                0 * factorial(0 -1) = 0 ... this is where we hit the base case.. 
+                                             than it start to add it all back up. the stack 
+ 
+       this shows sign of the LIFO  principle from "STACK" data structure. 
+        the last execustion  [0 * factorial(0 -1) = 0]  is POP off the stack as it goes back up the 
+        chain of command and add up the results recursively
+                 
+                */
+                  
+    }
+  } 
+  //console.log(factorial(3))
+
+  /*There are Two approached to Recursion. Top Down and Buttom-up
+  
+   Using forLoop is  BUTTOM-UP Approach. Because we are counting from 0 and increasing by 1 till
+   we hit the target  with the help of our basecase. 
+   // Note: Change the PARAMETER to fit your  equation.
+
+    write a function that print out till 10 
+   */
+  
+   function buttom_up(num, i=1, product = 1) {
+        if(i > num) return product
+        return buttom_up(num, i+1, product * i)
+          /*  
+                buttom_up(4, i+1 =2, 1 * 2 =2)
+                buttom_up(4, 2+1 =3, 2 * 3 =6)
+                buttom_up(4, 3+1 =4, 6 * 4 = 24)
+                 because  i = 4 and our base case says
+                          if(i > num) return product  which is 24
+
+                buttom_up(4, 4+1 =5,  return 24)
+
+          */
+   }
+
+   console.log(buttom_up(4))
