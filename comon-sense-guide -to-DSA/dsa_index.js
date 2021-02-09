@@ -102,6 +102,6 @@ const missingLetter = (str) => {
    }
   
 }
-console.log(missingLetter("a","b","c","d","e","g","h") )
+//console.log(missingLetter("a","b","c","d","e","g","h") )
 
 
