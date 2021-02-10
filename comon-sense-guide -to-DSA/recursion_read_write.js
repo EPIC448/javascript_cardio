@@ -63,7 +63,9 @@ Such as example .. just an example
   
    Using forLoop with   BUTTOM-UP Approach. Because we are counting from 0 and increasing by 1 till
    we hit the target  with the help of our basecase. 
-   // Note: Change the PARAMETER to fit your  equation.
+    Note: Change the PARAMETER to fit your  equation.
+   
+    Main Idea: we start  our giving INPUT and work backeard toward the basecase. 
 
     write a function that print out till 10 
    */
@@ -101,12 +103,13 @@ Such as example .. just an example
   }
   //console.log(sum([2,1,10,40])) // Right now, Stack overflow. 
 
-   
+
+  // ---- Count X using this method
   const countingX = (string) => {
 
     if(string.length ===1) return "line 107"
 
-    while (string[0]!="x") {
+    while (string[0] ==="x") {
       return countingX(string[1, string.length -1])++
     }
       return countingX(string[1, string.length -1])
@@ -114,3 +117,45 @@ Such as example .. just an example
   
 
   //console.log(countingX("axbxcxd")) // need to refactor.
+
+  // --------- Reverse a string using the Top_down method
+
+  const reverseString = (string) => {
+    if(string.length ===1) return "string is 1"
+    return reverseString(string[1, string.length -1]--) + string[0]
+  }
+  console.log(reverseString("fAther")) // Not working yet.
+
+
+//  ------- StarCase Problem using the Top-down Method-------
+ /* 
+  Staircase of N Steps, A person can only climb N stair  by step 
+  1 stair at a time
+  2 stair at a time
+  3 stair at a time
+   How many different path of combination is possible to the top of the stairs. 
+   Assume N = 5
+  
+   stair possible combinations
+   1+1+1+1+1 = 5
+   2+2+1= 5
+   2+3 = 5
+   3+1+1=5
+  */
+
+    const climbStair = (n) =>{
+ if(n == 0 || n ==1) return 1
+ if(n <0) return 0
+ return (n-1)   +   (n-2)   +   (n -3)
+    /*  5-1 =4      5-2=3        5-3 =2
+       4-1 =3       3-2 =1       2-3 = -1 
+       3-1 =2       1-2= -1
+       2-1=1
+       1=0 = 0
+      Onces it solve the sub-problems., it adds the total back up to ward the stack 
+     */
+  
+    }
+    //console.log(climbStair(5)) // 9 possible combinations
+
+    // Start on Chapter 11 execrise
