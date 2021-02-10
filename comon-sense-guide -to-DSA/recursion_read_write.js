@@ -61,7 +61,7 @@ Such as example .. just an example
 
   /*There are Two approached to Recursion. Top Down and Buttom-up
   
-   Using forLoop is  BUTTOM-UP Approach. Because we are counting from 0 and increasing by 1 till
+   Using forLoop with   BUTTOM-UP Approach. Because we are counting from 0 and increasing by 1 till
    we hit the target  with the help of our basecase. 
    // Note: Change the PARAMETER to fit your  equation.
 
@@ -75,12 +75,42 @@ Such as example .. just an example
                 buttom_up(4, i+1 =2, 1 * 2 =2)
                 buttom_up(4, 2+1 =3, 2 * 3 =6)
                 buttom_up(4, 3+1 =4, 6 * 4 = 24)
-                 because  i = 4 and our base case says
+                 because  i = 4 and our base case states
                           if(i > num) return product  which is 24
 
-                buttom_up(4, 4+1 =5,  return 24)
+                buttom_up(4, 4,  return 24)
 
           */
    }
 
-   console.log(buttom_up(4))
+  // console.log(buttom_up(4))
+
+ 
+
+ /* ----- Stop at working on the TOP_DOWN approach
+  Helps to focus on subproblem of the giving equation
+
+  Example
+
+ */
+ const  sum =(array)=>{
+   if(array.length === 1) return 1 //base case
+   return array[0] + sum([1, array.length - 1])
+   //         2      +      1-40
+   //         2       +     1-10,
+  }
+  //console.log(sum([2,1,10,40])) // Right now, Stack overflow. 
+
+   
+  const countingX = (string) => {
+
+    if(string.length ===1) return "line 107"
+
+    while (string[0]!="x") {
+      return countingX(string[1, string.length -1])++
+    }
+      return countingX(string[1, string.length -1])
+    }
+  
+
+  //console.log(countingX("axbxcxd")) // need to refactor.
