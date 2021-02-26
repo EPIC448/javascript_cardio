@@ -129,7 +129,7 @@ function solution(A) {
            return 1
        }
    }
-    //solutions
+    //solutions B
    let count1 = 0
    let count0 = 0
        for(let i = 0; i < A.length; i++) {

@@ -105,3 +105,7 @@ const missingLetter = (str) => {
 //console.log(missingLetter("a","b","c","d","e","g","h") )
 
 
+
+//  To Get a SubString in javascript here is a method we URLSearchParams. 
+//  JavaScript String substr() Method
+//  https://www.w3schools.com/jsref/jsref_substr.asp

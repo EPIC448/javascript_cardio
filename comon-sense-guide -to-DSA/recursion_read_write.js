@@ -20,19 +20,23 @@ Such as example .. just an example
  console.log("test recursion code")
  
 
- /*  Write  RECURSION
+ /*  Write  RECURSION------------ The is uses a BUTTOM-UP Method
  All recursion most have a base case else, INFINITY Loop
   The Idea is that problems are broken down into small pieces
  
  */
 
-  function doubleArray(array, index) {
-      
-      if(index >=  array.length) return array[index]
-    array[index] *= 2
-     doubleArray(array, index +1 )
+  function doubleArray(array, index = 0) {
+       
+    //   if(index >=  array.length) return array[index]
+    // array[index] *= 2    
+    //  doubleArray(array, index +1 )
+
+    if(index >= array.length) return array
+       
+    return doubleArray(array[index] *= 2, index ++) 
   }
-  //  console.log(doubleArray([1,2,3,6,11], 0)) // need a little work. 
+   // console.log(doubleArray([1,2,3,6,11], 0)) // need a little work. 
 
   //-------- Calculating Recursivly----------------
   //  ----------------- Factorial example----------
@@ -57,7 +61,7 @@ Such as example .. just an example
                   
     }
   } 
-  //console.log(factorial(3))
+  // console.log(factorial(3))  working
 
   /*There are Two approached to Recursion. Top Down and Buttom-up
   
@@ -85,12 +89,11 @@ Such as example .. just an example
           */
    }
 
-  // console.log(buttom_up(4))
+  // console.log(buttom_up(4)) //working
 
  
 
- /* ----- Stop at working on the TOP_DOWN approach
-  Helps to focus on subproblem of the giving equation
+ /* ----- Stop at working on the TOP_DOWN approach Helps to focus on subproblem of the giving equation
 
   Example
 
@@ -105,26 +108,27 @@ Such as example .. just an example
 
 
   // ---- Count X using this method
+  //Input  = "axbxcxd"
   const countingX = (string) => {
 
-    if(string.length ===1) return "line 107"
+    if(string.length ===0) return 0
 
     while (string[0] ==="x") {
-      return countingX(string[1, string.length -1])++
+      return 1 + countingX(string[1, string.length -1])
     }
       return countingX(string[1, string.length -1])
     }
   
 
-  //console.log(countingX("axbxcxd")) // need to refactor.
+  console.log(countingX("axbxcxd")) // need to refactor.
 
   // --------- Reverse a string using the Top_down method
-
+ // input = "fAther"
   const reverseString = (string) => {
     if(string.length ===1) return "string is 1"
     return reverseString(string[1, string.length -1]--) + string[0]
   }
-  console.log(reverseString("fAther")) // Not working yet.
+  //console.log(reverseString("fAther")) // Not working yet.
 
 
 //  ------- StarCase Problem using the Top-down Method-------

@@ -185,3 +185,14 @@ function evenOddSums(arr) {
  
 
 console.log(evenOddSums([50, 60, 60, 45, 71]) )
+
+
+
+HacekerRanck 
+
+if( nums.reduce((a, c) => a + Math.abs(mid - c), 0) >= 1){
+  return  nums.reduce((a, c) => a + Math.abs(mid - c), 1)
+ }else{
+   return 0
+ }
+}
