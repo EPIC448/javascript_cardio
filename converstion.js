@@ -118,3 +118,15 @@ class Car = {
 const q = () => { }  // No idea what Q mean
 
    const   query = () =>{ } // is much better. 
+
+
+   ===============================
+   A way to write javascript function to call its self immediatly.  And call an anonymous function
+
+
+   https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/object-oriented-programming/understand-the-immediately-invoked-function-expression-iife
+
+   (function () {
+    console.log("A cozy nest is ready");
+  })()
+ //=> "A cozy nest is ready"  

@@ -465,8 +465,7 @@ var stringMatching = function(words) {
  * Given a collection of integers that might contain duplicates, nums, return all possible subsets (the power set).
 
   Solution :  https://www.google.com/search?q=subset+ii+javascript&oq=subset+ii+javascript&aqs=chrome..69i57j0i13i457j0i22i30l4.14659j1j7&sourceid=chrome&ie=UTF-8
- * @param {number[]} nums
- * @return {number[][]}
+ 
  */
 var subsetsWithDup = function(nums) {
     nums.sort((a,b) => a-b)
