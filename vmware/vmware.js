@@ -146,7 +146,7 @@ for   a[2] = 5, b[2] =
 
    }
 
-
+//  find a solution
 
    ..... Three Problem...and
 
