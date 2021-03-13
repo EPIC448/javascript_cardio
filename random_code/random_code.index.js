@@ -592,27 +592,29 @@ const searchMatrix = (matrix, target) => {
 
 }
 
-console.log(searchMatrix(matrixTest,4) )
+// console.log(searchMatrix(matrixTest,4) )
 
 /// Next time we work on a Branch
 
 
-// The Exaxmple is for Stack and Queues. Very important
+//-======= The Exaxmple is for Stack and Queues. Very important
 
 // Valid Parentheses
 // let s = (x = y: [1,2,3])
 var isValid = function(s) {
     const stack = [];
-    const brackets = {‘(’: ‘)’, ‘{’: ‘}’, ‘[’: ‘]’}
+    
+    // Using the open brackets as Keys and close brackets as values
+    const brackets = {"(":")", "{":"}", "[":"]"}
 
     for (let i = 0; i < s.length; i++) {
         // Push all open parentheses onto stack
         if (brackets[s[i]]) stack.push(s[i]);
         // Check if you reach a closing bracket
-        if ([‘)’, ‘]’, ‘}’].includes(s[i])){
+        if ([ ")", "}", "]"].includes(s[i])){
             let bracket = stack.pop();
             // check if the last element in the stack is the corrrect open bracket
-
+ console.log(brackets[bracket])
            
             if (brackets[bracket] === s[i]) continue;
         //    The above line is indicating that 
@@ -626,3 +628,10 @@ var isValid = function(s) {
     // If there is not, return true, else return false
     return stack.length === 0;
 };
+
+
+let s = "()[{{}" // false
+let s1 = "{[]}" // true
+
+
+console.log(isValid (s1))
