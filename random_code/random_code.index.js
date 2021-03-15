@@ -642,9 +642,26 @@ console.log(isValid (s1))
 function diffArray(arr1, arr2) {
     var newArr = [];
   
-  let difference = arr1.filter(x => arr2.indexOf(x)=== -1)
-  console.log(difference)
-     return difference;
+  return [...difference(arr1, arr2), ...difference(arr2, arr1)];
+   Paying attention to it is used uptop
+  
+  // Created a function and collect it two spreatly. Important.  
+  function difference(a,b){ 
+    return a.filter(item => b.indexOf(item)=== -1)
   }
   
-  diffArray(["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]);
+  }
+  
+  //BigO  -- O(N)
+  diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]);
+
+//   ------- Seek And Destory 
+
+function destroyer(arr, ...valsToRemove) {
+
+    return arr.filter(item => !valsToRemove.includes(item)) 
+  
+  }
+  
+  destroyer(["tree", "hamburger", 53],"tree", 53); //=> Hamburger
+  destroyer([3, 5, 1, 2, 2], 2, 3, 5) should return [1].
