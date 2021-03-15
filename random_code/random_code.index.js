@@ -635,3 +635,16 @@ let s1 = "{[]}" // true
 
 
 console.log(isValid (s1))
+
+
+// Find Difference Two Array 
+//using Filter in here. 
+function diffArray(arr1, arr2) {
+    var newArr = [];
+  
+  let difference = arr1.filter(x => arr2.indexOf(x)=== -1)
+  console.log(difference)
+     return difference;
+  }
+  
+  diffArray(["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]);
