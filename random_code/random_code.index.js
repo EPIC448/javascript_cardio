@@ -563,8 +563,71 @@ const binarySearch = (array, target) => {
 
 let  matrixTest = [[1,3,5,7],[10,11,16,20],[23,30,34,50]], target = 13
 //Output: false
+// solution 1 
+
+var searchMatrix = function(matrix, target) {
+    for(var row in matrix){
+      /*
+      console.log(matrix[x])
+      [ 1, 3, 5, 7 ]
+[ 10, 11, 16, 20 ]
+[ 23, 30, 34, 60 ]
+      */
+      
+        for(var column in matrix[row]){
+          /*
+            console.log(matrix[x][y])
+      1,3,5,7,10,11,16,20,23,30,34,60
+*/
+            if(target==matrix[row][column])
+                return true
+            
+        }
+    }
+    return false
+};
+
+let matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]],
+target = 60
+
+console.log( searchMatrix(matrix, target) )
+
+/*
+// if the target is in the matrix, return true else keep going. 
+            row columns
+  matrix[0][0] = 1
+  matrix[0][1] = 3
+  matrix[0][2] = 5
+  matrix[0][3] = 7
+ 
+  matrix[1][0] = 10
+ matrix[1][1] = 11
+ matrix[1][2] = 16
+ matrix[1][3] = 20
+ 
+  matrix[2][0] = 23
+ matrix[2][1] = 30
+ matrix[2][2] = 34
+ matrix[2][3] = 60
+ 
+// Keep it simple for now , Use a forLoop
+  
+  
+ //iterate over the row = r
+ then iterate over the columus = c
+ 
+And a condition- 
+if martix[r][c] == target, return true
+ 
+ 
+ 
+*
+/
 
 
+
+
+// ----- SOlution 2
 const searchMatrix = (matrix, target) => {
     let flatMatrix = matrix.flat()
     //.sort((a,b) => a-b)
@@ -591,6 +654,7 @@ const searchMatrix = (matrix, target) => {
     return false
 
 }
+
 
 // console.log(searchMatrix(matrixTest,4) )
 
