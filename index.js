@@ -248,7 +248,7 @@ const companies = [
 
               ----------- Option 1 use-------------------
              HINT:  // Using Reducer//... You create it as an Helper function FIRST. Then You
-             //run it on each instance of your are/
+             //run it on each instance of your array/
              
              How it works in Real life. 
              [0, 1, 2, 3, 4].reduce(function(accumulator, currentValue, currentIndex, array) {
@@ -582,3 +582,16 @@ let getLengthOfAge = (arr) => {
 console.log(getLengthOfAge([1,2,4]))
 
 // ======== end of Difference  between length & Index=====
+
+
+// ========== Javascript SETS==========
+let myArray = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd']
+let setArray = new Set(myArray) 
+ // Set { 'a', 'b', 'c', 'e', 'd' }.. Unique elements
+ 
+ let num = [2,1,2,3,4,5,1,2,5,5,5,5,8,6,3]
+ let setNum = new Set(num)
+  //Set { 2, 1, 3, 4, 5, 8, 6 }
+console.log(setNum)
+
+//==========End javascript Sets=========
