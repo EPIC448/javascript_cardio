@@ -7,7 +7,7 @@
 // details included below for those methods.  
 // Filter Take only 3 ARGUMENTS
 
-
+console.log (" test Index.js")
 
 const companies = [
     {name: "Company One", category: "Finance", start: 1981, end: 2003},
@@ -202,9 +202,9 @@ const companies = [
                    */
 
 
-NOTE:
+// NOTE:
      // use MAP 
-     const testMap = (arr, query) =>{
+     const testMap =(arr, query) => {
      
       return companies.map(function(company, index, array){
           return company.name.toLowerCase().indexOf(query.toLowerCase()) != -1
@@ -385,9 +385,10 @@ let orderAge = ages.sort(function (a, b) {
    =================*/
   //  ---------- another Way to use SORTING for array of Objects
 
-  const sortCompanyAge  =(arr) => {
+  const sortCompanyAge  =(arr) => { 
      
- return arr.sort((a,b) => b.start-a.start) 
+ return arr.sort((a,b) => b.start-a.start)
+  } 
 
 
 
@@ -437,7 +438,7 @@ undefined
 
 
 let teams = { name: "alex", color: "red", city: "NewYork" }
-let arr = [3, 2, 3, 4, 6]
+//  let arr = [3, 2, 3, 4, 6]
 //array.foo = 'Test Hello'
   
 //----------------------for..in    ...... Work OBJECTS. ("in" --- work with "string")
