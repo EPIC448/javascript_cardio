@@ -105,3 +105,45 @@ const missingLetter = (str) => {
 console.log(missingLetter("a","b","c","d","e","g","h") )
 
 
+
+//  How we use HashMap with meooization. 
+ /*
+  memorization need couple of this to work. 
+  Pure function
+  
+  */
+   // pure function. 
+  
+   const add = (n) => (n + 10)
+   console.log(add (3)) // working. 13
+ 
+   //memoize function takes in a function & returns a memoized function
+ // NOte: How we use the Pure function here. 
+   const memoize = (fn) => {
+     let cache_hashMap = {};
+     return (...args) => {
+ 
+  console.log(args + "line 75")
+ 
+       let n = args[0] // taking one argument here that we passed in. 
+ 
+       if (n in cache_hashMap){
+         console.log('Fetch from hashMap')
+         return cache_hashMap[n]
+       }else{
+         console.log('calculating result')
+         let result = fn(n); // recursion right here
+ 
+         cache_hashMap[n] = result // log into the hashMap
+         return result
+       }
+     }
+   }
+ 
+   //createing a memozed funciton 
+   const memoizedAdd = memoize(add);
+   // console.log(memoizedAdd(2))
+   //   console.log(memoizedAdd(5))
+       console.log(memoizedAdd(5))
+
+
