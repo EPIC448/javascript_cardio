@@ -51,7 +51,7 @@ Sources for Details : https://www.javascripttutorial.net/javascript-stack/
  class Stack {
      // has a bucket that we will keep the elements in.
 
-      bucket = []
+      this.bucket = []
 
       //Methods
 
@@ -217,9 +217,14 @@ let s1 = "{[]}" // true
   queues.add(6)
   queues.add("erae")
 
-   queues.search(4) //> return the index of the searched iterms.  in this case index 1
+queues.search(4) //> return the index of the searched iterms.  in this case index 1
+   
+// Can only remove from the Front
   queues.remove(6) //> remove 3rd index. 
   //console.log(queues.print()) //=>[ 3, 4, 6, 'erae' ]
+
+  //console.log(queues.stack) // => ["erae", 6]
+
 
 //  ---------------------------Reverse a String using Queues------
 
