@@ -18,6 +18,33 @@ Sources for Details : https://www.javascripttutorial.net/javascript-stack/
 */
 
 
+//---------- The most Simplest Form of Stack  in code.= Working==
+
+// let stack = [];
+
+// stack.push(1);
+// console.log(stack); // [1]
+
+// stack.push(2);
+// console.log(stack); // [1,2]
+
+// stack.push(3);
+// console.log(stack); // [1,2,3]
+
+// stack.push(4);
+// console.log(stack); // [1,2,3,4]
+
+// stack.push(5);
+// console.log(stack); // [1,2,3,4,5]
+
+
+//----------End of Simplest Form of Stack===
+
+
+
+//----------Implementation in code.===
+
+
  let stackFile = "HelloWorld"
  console.log(stackFile)
 // ---------------//Stacks
@@ -43,15 +70,28 @@ Sources for Details : https://www.javascripttutorial.net/javascript-stack/
       }
  }
 
- const stack = new Stack()
-//  stack.push(3)
-//  stack.push(4)
-//  stack.push(6)
-//  stack.push("erae")
+const stack = new Stack()
+ 
+// Pay attention to how your calling them. 
+  //
+//  stack.bucket.push(4)
+// stack.bucket.push(3)
+// stack.bucket.push(6)
+// stack.bucket.push("car")
+ // console.log(stack.bucket) => [4, 3, 6, "car"]
+
+
+ // remove from the Stack You Type. 
+ stack.remove() // => [4, 3, 6]  // Remove "car"
+
+ stack.remove() // => [4, 3] // remove 6
+
+ stack.remove() //=> [4] // remove 3
 
 
  //const test = ("Working test") 
 //console.log( test) // File not runing, need to be tested.
+
 
 
 // ------------ Reverse a String. ---------

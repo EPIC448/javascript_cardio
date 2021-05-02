@@ -565,7 +565,10 @@ let  matrixTest = [[1,3,5,7],[10,11,16,20],[23,30,34,50]], target = 13
 //Output: false
 // solution 1 
 
-var searchMatrix = function(matrix, target) {
+var searchMatrix = function (matrix, target) {
+    
+    // If you want to find the index. you can just say  == console.log(array.flat().indexOf(target))
+
     for(var row in matrix){
       /*
       console.log(matrix[x])
@@ -574,7 +577,7 @@ var searchMatrix = function(matrix, target) {
 [ 23, 30, 34, 60 ]
       */
       
-        for(var column in matrix[row]){
+        for(var column in matrix[row]){ // part is important.
           /*
             console.log(matrix[x][y])
       1,3,5,7,10,11,16,20,23,30,34,60
@@ -628,6 +631,7 @@ if martix[r][c] == target, return true
 
 
 // ----- SOlution 2
+
 const searchMatrix = (matrix, target) => {
     let flatMatrix = matrix.flat()
     //.sort((a,b) => a-b)
@@ -660,6 +664,20 @@ const searchMatrix = (matrix, target) => {
 
 /// Next time we work on a Branch
 
+//----------- Soution 3.. Super Simple.0----- Working
+ const matrix = (array, target = null) => {
+
+
+ console.log(array.flat().indexOf(target))
+   console.log(array.flat().includes(target))
+ }
+ 
+ console.log(matrix(matrixTest, target ))
+
+
+
+
+//------------------------------
 
 //-======= The Exaxmple is for Stack and Queues. Very important
 
