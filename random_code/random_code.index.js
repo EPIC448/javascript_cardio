@@ -23,11 +23,18 @@ function addSumTwo(array, target) {
          }   
         }
      }
-  return result
+    
+    // iT Return Several Indexs. thus, we want to make it Unique
+    let uniq = [...new Set(result)];
+
+    return uniq
+
  }
 
 
-//console.log(addSumTwo([2, 7, 11, 15], 9) )
+//console.log(addSumTwo([2, 7, 11, 15], 9) ) // >  Working great. 
+
+// =========3 Sum of prblem----
 
 // Solve 3sum of problems. using a Loop and 2 pointer method.
 const threeSum = (arr,Target) => {
@@ -768,8 +775,10 @@ function destroyer(arr, ...valsToRemove) {
           
           //OPtion 1 of swap 
           let temp = arr[i]
-          arr[arr.indexOf(i+1)] = temp;
-          arr[i] = i + 1
+            arr[arr.indexOf(i+1)] = temp;
+            arr[i] = i + 1
+            
+            // Option 2 for swap
           // arr[i],  arr[arr.indexOf(i+1)] =  arr[arr.indexOf(i+1)],arr[i]
                 minSwapCount ++
   
