@@ -747,3 +747,42 @@ function destroyer(arr, ...valsToRemove) {
   
   destroyer(["tree", "hamburger", 53],"tree", 53); //=> Hamburger
   destroyer([3, 5, 1, 2, 2], 2, 3, 5) should return [1].
+
+
+
+
+//   ======== MinimumSwap  problem====
+    steps Find min
+    check index
+    if val of index != index+min
+    find correct valswap correct val with at the current indexcount swap 
+*/
+
+ //5
+ const minimumSwap = (arr) => {
+    let minSwapCount = 0;
+     
+     for (let i = 0; i < arr.length; i++){
+        
+        if(arr[i] != i + 1){
+          
+          //OPtion 1 of swap 
+          let temp = arr[i]
+          arr[arr.indexOf(i+1)] = temp;
+          arr[i] = i + 1
+          // arr[i],  arr[arr.indexOf(i+1)] =  arr[arr.indexOf(i+1)],arr[i]
+                minSwapCount ++
+  
+          }
+       
+       }
+     
+     return minSwapCount
+     }
+     console.log(minimumSwap([3,11,2,1])) //> 4... Working. 
+//   ======== END of MinimumSwap  problem====
+
+
+
+
+
