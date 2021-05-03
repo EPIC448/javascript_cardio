@@ -121,6 +121,7 @@ const threeSum = (arr,Target) => {
 
 
 //------- Code is Working---- but need Better understanding ---
+
 /// From code meet ups.. The code follow a sequence of 1,0,1,0
 // return numbers of time a certain element changes in the code. 
 
@@ -178,12 +179,8 @@ const removePalindromeSub = s => {
     return 1;
   };
   
-  //console.log(removePalindromeSub("baabb"))
+  //console.log(removePalindromeSub("baabb")) //> Working Well.  
 
-
-
-
-  ///
 
   /** LeetCode.  1418.......... Display Table of Food Orders in a Restaurant. Using HashTable. 
  // Need to Work on and Review it. 
@@ -199,10 +196,12 @@ const removePalindromeSub = s => {
 
 
   /*
+
+  Link to the quesiton: https://leetcode.com/problems/display-table-of-food-orders-in-a-restaurant/
   Output: [["Table","Beef Burrito","Ceviche","Fried Chicken","Water"],
-            ["3",   "0",  "2",      "1",                        "0"],
-            ["5",   "0",  "1",      "0",                         "1"],
-            ["10",  "1",  "0",     "0",                          "0"]
+            ["3",       "0",            "2",      "1",         "0"],
+            ["5",       "0",            "1",      "0",          "1"],
+            ["10",      "1",            "0",     "0",           "0"]
 ] 
   
   */
@@ -318,7 +317,7 @@ displayTable(orders)
                     if(newTable[idx]) {
                         newTable[idx].push([key, value]);
                     }else {
-                                            newTable[idx] = [[key,value]]
+                       newTable[idx] = [[key,value]]
 
                     }
 
@@ -467,7 +466,7 @@ var stringMatching = function(words) {
 
 
 
-// leetcode 90.  
+//======== leetcode 90.  
 /**
  * Given a collection of integers that might contain duplicates, nums, return all possible subsets (the power set).
 
@@ -541,7 +540,7 @@ let  Input = "leetcode" , Output = "leotcede"
 //console.log(reverseVowels(Input))
 
 
-// =====  Binary search working========
+// =====  Binary search==== working========
 const binarySearch = (array, target) => {
 
  let sortedArray = array.sort()
@@ -726,15 +725,15 @@ let s1 = "{[]}" // true
 console.log(isValid (s1))
 
 
-// Find Difference Two Array 
-//using Filter in here. 
+// ==== Find Difference Two Array === Working ==
+//using Filter in here.
+
 function diffArray(arr1, arr2) {
-    var newArr = [];
   
   return [...difference(arr1, arr2), ...difference(arr2, arr1)];
    Paying attention to it is used uptop
   
-  // Created a function and collect it two spreatly. Important.  
+  // Helper Function...Created a function and collect it two spreatly. Important.  
   function difference(a,b){ 
     return a.filter(item => b.indexOf(item)=== -1)
   }
