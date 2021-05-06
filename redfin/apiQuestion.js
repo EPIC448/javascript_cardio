@@ -229,7 +229,39 @@ function queryApi(){
  
  let utcHours = (utcFormateArray[0]) //16 // Notice there are not in a string. 
  let utcMinutes = (utcFormateArray[1]) //00
- let utcDayOrder = (utcFormateArray[2])//04
+let utcDayOrder = (utcFormateArray[2])//04
+    
+    
+  /* Possible alternative to how I can get my code to work. intrepulating the utcFormate time. --- Working
+
+ let unixTimeStamp = 1602172800
+
+ function utcFormate(timeStamp){
+   let timeStampArray = []
+   
+    let milliseconds = timeStamp * 1000
+    let dateObject  = new Date(milliseconds)
+ 
+   let hours =  dateObject.getUTCHours()
+   let minutes = "0" + dateObject.getUTCMinutes()
+   let dayOrder = "0" + dateObject.getUTCDay() //shuould be 5, thursday
+ 
+  timeStampArray.push(hours,minutes,dayOrder)
+     return timeStampArray
+ } 
+ 
+ let utcFormateArray  = utcFormate(unixTimeStamp)
+ console.log("utcFormate")
+ 
+ let url = `https://api.filtered.ai/q/foodtruck?hour=${utcFormateArray[0]}&minutes=${utcFormateArray[1]}&dayOrder=${utcFormateArray[2]}`
+ 
+ 
+  const urlString = `"${url}"`
+ */ 
+
+
+
+
  
       let https = require("https")
  
