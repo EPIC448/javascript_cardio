@@ -67,7 +67,7 @@ function flattenArray(arrays) {
    
   console.log(flattenArr(chuckedArray))
 
-//------------------------  NOt workin yet-----------------------------------------
+//------------------------  NOt working yet-----------------------------------------
 // CHALLENGE 4: ANAGRAM-
 // Return true if anagram and false if not
 // ex. 'elbow' === 'below'
