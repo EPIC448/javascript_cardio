@@ -163,6 +163,29 @@ class SinglyLinkedList {
 
 
 
+    /*
+    Getting and setting
+        Since we already implemented the get method above for use in our pop implementation, all we need to do is implement the set method.
+        This method finds a node at the specified index, and changes its value to the passed-in variable. 
+        It will also use our getter method. We just need to handle the case if the node is not found.
+    */
+    
+    //change node at given index
+    setNodeAtIndex(val, index) {
+        //find the node using already built method
+        const foundNode = this.getNodeAtIndex(index);
+        //if the node is not found update and return
+        if (foundNode) {
+            foundNode.value = val;
+            return foundNode;
+        }
+        //else return null
+        return null;
+        
+    }
+    
+
+
 
 } // end of SingleLinked List class
 
