@@ -103,7 +103,64 @@ class SinglyLinkedList {
         return shiftNode;
     }
     
+
+    /*
+      To Pop of the list, we need to find the new TAIL. So we use a Helper Method
+      "getNodeAtIndex"
+      Which return a Node at a giving index
+    */
     
+    //return  node at a given index
+    getNodeAtIndex(index) {
+        
+        //if the index is not within  the list, return null
+        if (index >= this.length || index < 0) return null;
+
+        //iterate through nodes until finding the one at the given index
+        let currentNode = this.head;
+        let currentIndex = 0
+        while (currentIndex !== index) {
+            currentNode = currentIndex.next;
+            currentIndex++
+        }
+        return currentIndex
+    }
+
+    /*Now we can use POP method to remove the node from the end of the LIST 
+     This Function uses a Counter and iterates through the list until we get the index we want, We need the second to the last node, 
+     or 
+     list length minus two 
+   */
+    
+    //remove node from end of the list
+    pop() {
+        if (!this.tail) {
+            return false;
+        }
+
+        //get removed Node
+        const poppedNode = this.tail;
+        //if list has more than 1 node
+        if (this.head !== this.tail) {
+            //find new tail
+            const newTail = this.getNodeAtIndex(this.length - 2);
+            //remove newtail's reference to poppedNode
+            newTail.next = null  // becasue it empty
+            //make it a new tail
+            this.tail = newTail
+
+            //otherwise establish list is empty
+        } else {
+            this.head = null;
+            this.tail = null;
+        }
+        
+        //subtracr 1 from length
+        this.length--;
+        //return poppedNode
+        return poppedNode;
+    }
+
 
 
 
