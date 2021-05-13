@@ -262,12 +262,7 @@ let node_2 = new Node("upon")
 let node_3 = new Node("a")
 let node_4 = new Node("time")
 
-
-
-console.log(
-    node_1,
-    node_2,
-    node_3,
-    node_4,
-    
+let testSingle = new SinglyLinkedList(),   //> testSingle.add(node_1)
+console.log (
+   testSingle
 )
