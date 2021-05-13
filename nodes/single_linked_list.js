@@ -1,5 +1,6 @@
 // Source of INformation on this topic.  https://gist.githubusercontent.com/Giagnus64/daa16a8be6188a8951121d947906acd3/raw/ea296729194c5020ceccebf127e17d94daf4d9ff/singlyLinkedList.js
 // Another Great resources  https://visualgo.net/en/list
+// How to Invoke new On a Class Object.  https://dmitripavlutin.com/javascript-classes-complete-guide/#:~:text=The%20new%20operator%20instantiates%20the,instance%20of%20the%20User%20class.
 
 //  create A Node. 
 class Node {
@@ -184,9 +185,89 @@ class SinglyLinkedList {
         
     }
     
+    /*
+    Inserting and removing at an INDEX
+        Inserting and removing items from linked lists is made easier by all the previous methods we’ve just written. We’ll need to follow these steps:
+        Check if the index exists in the linked list (return false if not).
 
+        If removing/adding at the beginning or end of the list, use the already written methods (no more worrying about the tail/head!).
+        Get the nodes before and after the inserted/removed node and assign their pointers properly.
+    */
 
+ 
+    //insert a new Node at the index with Given Value  
+    insertAtIndex(index, val) {
+        //if index not valid return false
+        if (index < 0 || index > this.length) {
+            return false;
+        }
+
+        //if index is Zero use already built UNSHIFT METHOD
+        if (index === 0) {
+            return this.unshift(val);
+        }
+        //if index is at the end of list, use already built PUSH METHOD
+        if (index === this.length) {
+            return this.push(val);
+        }
+
+        //Make a new Node, find the nodes before and after it, Make before's next the new node, and the newNode's next the after
+
+        const newNode = new Node(val);
+        const after = this.getNodeAtIndex(index);
+        const before = this.getNodeAtIndex(index - 1);
+        newNode.next = after;
+        before.next = newNode;
+
+        //increase the length 
+        this.length++
+        return this;
+    }
+
+    //  Remove Node at certain INDEX
+    removeFrom(index) {
+          //if index not valid return false
+          if (index < 0 || index > this.length) {
+            return false;
+          }
+        
+          //if index is at the beginning use already SHIFT METHOD
+          if (index === 0) {
+            return this.shift();
+        }
+        //if index is at the end of list, use already built POP METHOD
+        if (index === this.length - 1) {
+            return this.pop(val);
+        }
+
+        //Get before and after, set before's next to after and remove afters reference from removed Node
+
+        const before = this.getNodeAtIndex(index - 1);
+        const removeNode = this.getNodeAtIndex(index);
+        before.next = removeNode.next;
+        removeNode.next = null;
+
+        //increase the length 
+        this.length++
+        return removeNode;
+    }
+
+    
+    
 
 } // end of SingleLinked List class
 
+let node_1 = new Node("onces")
+let node_2 = new Node("upon")
+let node_3 = new Node("a")
+let node_4 = new Node("time")
 
+
+
+console.log(
+    node_1,
+    node_2,
+    node_3,
+    node_4,
+    
+)
