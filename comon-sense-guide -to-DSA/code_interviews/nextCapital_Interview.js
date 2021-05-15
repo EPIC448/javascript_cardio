@@ -27,11 +27,12 @@ function solution(message, K) {
 // ========== Next Problem======
 
 //  Given an array 1s and 0s, find the longest sequence 
-// of 1s and return return its starting INDEX
+// of 1s and return  its starting INDEX
 //   There could be muiltpy sequences of the same length
 
 //   Return the starting points of the longest occurances(maximal)
-//   ..BITS Means Nothing.. 
+//   ..BITS Means Nothing..
+// If cant find the number return -1 
 
 //   A[0] = 0
 //   A[1] = 1
@@ -44,19 +45,23 @@ function solution(message, K) {
 //   A[8] = 0
 //   A[9] = 1
 
+// [0,1,1,1,0,1,1,1,0,1] ==> 5
+
+//Example 2
 // Below should return negative -1
 // A[0] = 0
-//   A[0] = 1
+// A[0] = 1
+
+// [0,1]
    
 // */
 
 
-
+// Only allowed to change 2 lines.
 function solution(A) {
     // A = array
     // n= array.length
-    var n = A.length;
-    //index => A[9] = 1
+    var n = A.length; // the array start from index 1,  instead of Zero
     var i = n - 1;
     var result = -1;
     //max = numberofoccurance, k= kount
@@ -73,16 +78,20 @@ function solution(A) {
             k = 0;
         i = i - 1; 
     }
-    if (A[i] == 1 && k + 1 > maximal)
-        result = 0;
-    return result;
+    // if (A[i] == 1 && k + 1 > maximal)  // This Line is note usefull. changed line
+        // result = 0;      // This Line is note usefull. changed line
+        // result = -1; // The Change in the code.  change line
+    
+    return result; // Line from 66
 }
 
-let test1 =  [1, 0, 1, 1, 0, 1, 1, 1, 0, 1]
+let test1 =  [1, 0, 1, 1, 0, 1, 1, 1, 0, 1] //=> 5
 
-let test2 = [0,0]
+let test2 = [0,1]
 
 let test3 = [0, 1, 1, 1, 0, 1, 1, 1, 1, 1]
 
+let test4= [0,0] //>-1
 
-console.log(solution(test3))
+
+console.log(solution(test4))
