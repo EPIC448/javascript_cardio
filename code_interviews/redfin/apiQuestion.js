@@ -75,6 +75,12 @@
 //      1578830400.0 will convert to( 12 January 2020 12 pm)
 //  */
 
+   /*
+   curl -H"Authorization: Basic ZmlsdGVyZWQ6YWRtaW4" --request GET "https://api.filtered.ai/q/foodtruck?hour=16&minutes=00&dayOrder=04"
+   
+    */
+   
+
 
 function queryApi(){
 
@@ -132,10 +138,6 @@ function queryApi(){
    
    
    
-   /*
-   curl -H"Authorization: Basic ZmlsdGVyZWQ6YWRtaW4" --request GET "https://api.filtered.ai/q/foodtruck?hour=16&minutes=00&dayOrder=04"
-   
-    */
-   
+
    
    
