@@ -78,8 +78,8 @@ function solution(A) {
             k = 0;
         i = i - 1; 
     }
-    // if (A[i] == 1 && k + 1 > maximal)  // This Line is note usefull. changed line
-        // result = 0;      // This Line is note usefull. changed line
+    // if (A[i] == 1 && k + 1 > maximal)  // This Line is not usefull. changed line
+        // result = 0;      // This Line is not usefull. changed line
         // result = -1; // The Change in the code.  change line
     
     return result; // Line from 66
