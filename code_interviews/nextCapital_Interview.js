@@ -1,5 +1,8 @@
 // Code Challenge// index of the last space Character before the K element.=== WOrking
-
+/*
+NOte: with Refacotor code like this..... Your looking  for Duplicate code
+or Code that does not make sense that was not suppose to Fit.
+*/
 function solution(message, K) {
     // write your code in JavaScript (Node.js 8.9.4)
 
