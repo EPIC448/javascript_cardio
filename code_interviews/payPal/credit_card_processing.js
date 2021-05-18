@@ -136,6 +136,42 @@ decimals).
   
     Resources :   Passing Arguement into the command Line.  Very helpful .
     https://nodejs.org/docs/latest/api/process.html#process_process_argv
+
+
+
+
+
+
+    // Algrithem Most be able to accept input from 2 sources...  Terminal input or the File input
+/* Requiring fs module in which
+ readFile function is defined.
+
+ Get data from ./myprograminput.txt
+ */
+
+const fs = require('fs')
+
+fs.readFile('./myprograminput.txt', (err, data) => {
+	if (err) throw err;
+
+	console.log(data.toString());
+})
+
+
+/*
+Input Read from a STDIN -- Terminal Input -- working 
+
+// STDIN---Input that comes from the terminal / Out Put the Data to the Terminal, Right after
+// resources: https://www.geeksforgeeks.org/node-js-process-stdin-property/
+
+process.stdin.once('data',
+    (chunk) => {
+        let test = chunk.toString().trim();
+        console.log("Hello, " + test + "!");
+        process.exit();
+    })
+
+
    */
   
   
