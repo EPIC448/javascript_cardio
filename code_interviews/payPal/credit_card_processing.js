@@ -27,7 +27,7 @@
     
  Requirement -2:
         Program accepts 2 input from two sources:
-         A filename Passed as a commond line argument,  ./myprograminput.txt;
+      √ A filename Passed as a commond line argument,  ./myprograminput.txt;
          input read from STDIN,   .myprogram < input.txt.
 
         Program most read the whole input 
@@ -147,4 +147,12 @@ decimals).
    Using as DElimited File into array as a look-up table.
   
    https://stackoverflow.com/questions/56619678/javascript-reading-a-whitespace-delimited-text-file-into-array-and-use-as-look
+   
+   Read from a Txt file
+   https://www.geeksforgeeks.org/javascript-program-to-read-text-file/
+   
+
+   using STDIN How to use the Right way.
+   https://www.geeksforgeeks.org/node-js-process-stdin-property/
+
    */
