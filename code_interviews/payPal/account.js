@@ -1,5 +1,6 @@
 
 let hashMap = []
+
 function Account(name, balance, creditCardNum,) {
     this.name = name;
     this.balance = balance;
@@ -56,9 +57,8 @@ const b = new Account('lisa', 2000, '0000000')
 a.charge(500)
 hashMap.push(a)
 
-console.log(`
- (${a.name}, ${a.balance}),
- (${b.name},${b.balance})
-`)
+process.stdout.write(`
+(${a.name}, ${a.balance}),
+(${b.name},${b.balance})
+`); 
 
-console.log(a)

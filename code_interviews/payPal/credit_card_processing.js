@@ -1,4 +1,4 @@
- /*. READ Question And UNDERSTAND IT, WRITE IT OUT AS NEEDED. DO NOT OVER THING IT. VERY IMPORTANT. 
+ /*. READ Question And UNDERSTAND IT, WRITE IT OUT AS NEEDED. DO NOT OVER think IT. VERY IMPORTANT. 
   DO NOT IMPLEMENT EXTRA FEATURES
    Sources Code ONLY
   */
@@ -27,7 +27,7 @@
     
  Requirement -2:
         Program accepts 2 input from two sources:
-      √ A filename Passed as a commond line argument,  ./myprograminput.txt;
+       A filename Passed as a commond line argument,  ./myprograminput.txt;
          input read from STDIN,   .myprogram < input.txt.
 
         Program most read the whole input 
@@ -257,6 +257,9 @@ output.innerText += `after:  a: ${a.balance}, b: ${b.balance}\n`;
    
 
    using STDIN How to use the Right way.
-   https://www.geeksforgeeks.org/node-js-process-stdin-property/
+   
+
+   Resources:
+   https://stackoverflow.com/questions/38674405/creating-a-basic-bank-system-keyword-this-in-javascript/38674455
 
    */
