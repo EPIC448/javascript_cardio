@@ -1,7 +1,11 @@
 
-import  { deque } from "collections/deque";
+import { deque } from "collections/deque";
+// import {deque} from '@data-structure/deque';
+
 // import {default as namedtuple } from '@aureooms/js-collections' ;
+let Point = namedtuple( 'Point' , [ 'x' , 'y' ] ) ;
 // Find a replacement for namedTuple
+
 System.import('/js/main.js');
 
 import { default as is_luhn_valid } from '../utils/luhn.js'
