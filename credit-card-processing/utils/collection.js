@@ -1,6 +1,7 @@
-import { default as OrderedDict} from collection
-var Deque = require("collections/deque");
-
+// import { default as OrderedDict} from "collections/dict"
+// var Deque = require("collections/deque");
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
 
 class CreditRecordsCollection {
      orderedDict = []
@@ -74,7 +75,7 @@ class CreditRecordsCollection {
         } else if (typeof transctions == 'Credit'){
             this.credit(transction)
         } else {
-            break
+            return
         }
     }
   
@@ -101,4 +102,4 @@ class CreditRecordsCollection {
      
 } // end of class
 
-//Tested
+export default{CreditRecordsCollection };

@@ -33,3 +33,4 @@ class LuhnTest{
 }
 
 
+export default {LuhnTest};

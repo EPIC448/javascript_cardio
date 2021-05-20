@@ -98,3 +98,5 @@ class CollectiveTest{
     }
 
 }
+
+export default {Transaction, Account};

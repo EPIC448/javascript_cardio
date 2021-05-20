@@ -1,12 +1,14 @@
 
-import { deque } from "collections/deque";
+// import { deque } from "collections/deque";
 // import {deque} from '@data-structure/deque';
 
-// import {default as namedtuple } from '@aureooms/js-collections' ;
-let Point = namedtuple( 'Point' , [ 'x' , 'y' ] ) ;
+// System.import('/js/main.js');
 // Find a replacement for namedTuple
+const namedtuple = (element,[]) => {
 
-System.import('/js/main.js');
+}
+
+Object.freeze(namedtuple)
 
 import { default as is_luhn_valid } from '../utils/luhn.js'
 
@@ -22,8 +24,8 @@ let Account = namedtuple(
     let Transaction = namedtuple(
         'Transations',
         ['type',
-            'name',
-            'amount',
+        'name',
+        'amount',
         ])
 
 function get_data() {
@@ -83,4 +85,6 @@ function formate_data(data, accounts=deque(), transactions = deque()) {
 
 let variable = "test variable"
 
-export default{ get_data, formate_data, variable };
+export default { get_data, formate_data };
+    
+ export {Transaction, Account};
