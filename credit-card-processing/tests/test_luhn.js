@@ -20,7 +20,7 @@ class LuhnTest{
      test_luhn_checksum =(self)=>{
         self.assert.equal(_digits_of('123456789'), 7),
         self.assert.equal(_digits_of('022043850'), 5),
-        self.assert.equal(_digits_of('957392048'), 2),
+        self.assert.equal(_digits_of('957392048'), 2)
     }
      test_is_luhn_valid =(self)=>{
         self.assert.fail(is_luhn_valid('123456789'))
