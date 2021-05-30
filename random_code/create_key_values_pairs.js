@@ -10,4 +10,18 @@ let valueAge = [5, 3, 2, 34, 5, 6]
     
     for (let key of Object.keys(obj)){
       console.log( key + ": " + obj[key] )
-      }
+    }
+    /*
+    console.log(obj) => 
+     { steve: 5, lisa: 3, mike: 2, jonny: 34, mike2: 5, andre: 6 }
+    
+     console.log( key + ": " + obj[key] )
+    => 
+     steve: 5
+     lisa: 3
+      mike: 2
+      jonny: 34
+      mike2: 5
+      andre: 6
+ 
+    */
