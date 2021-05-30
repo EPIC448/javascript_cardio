@@ -1,5 +1,6 @@
   // I want to make values in an array a key in an object and Print it out.  
-  // Working as expected. 
+  // Working as expected.   
+  // resources:  https://www.geeksforgeeks.org/how-to-store-a-key-value-array-in-javascript/
 let valueAge = [5, 3, 2, 34, 5, 6]
   let keysOfName = ["steve", "lisa", "mike", "jonny", "mike2", "andre"]
   let obj = {}
