@@ -471,8 +471,7 @@ var stringMatching = function(words) {
  * Given a collection of integers that might contain duplicates, nums, return all possible subsets (the power set).
 
   Solution :  https://www.google.com/search?q=subset+ii+javascript&oq=subset+ii+javascript&aqs=chrome..69i57j0i13i457j0i22i30l4.14659j1j7&sourceid=chrome&ie=UTF-8
- * @param {number[]} nums
- * @return {number[][]}
+ 
  */
 var subsetsWithDup = function(nums) {
     nums.sort((a,b) => a-b)
@@ -528,6 +527,9 @@ var reverseVowels = function(s) {
  // This is where the swipe occurs
             s[left] = s[right]
             s[right] = temp
+
+      // another way to write swip [str[left],str[right]] = [str[right],str[left]]
+      
             left++
             right--
         }
@@ -757,11 +759,11 @@ function destroyer(arr, ...valsToRemove) {
 
 
 
-//   ======== MinimumSwap  problem====
+//   ======== MinimumSwap  problem ====
     steps Find min
     check index
     if val of index != index+min
-    find correct valswap correct val with at the current indexcount swap 
+    find correct val-swap correct val with at the current indexcount swap 
 */
 
  //5
@@ -790,6 +792,8 @@ function destroyer(arr, ...valsToRemove) {
      console.log(minimumSwap([3,11,2,1])) //> 4... Working. 
 //   ======== END of MinimumSwap  problem====
 
+
+// ===Find the K closest element to a given value==== LeetCode 658
 
 
 
