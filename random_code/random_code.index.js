@@ -685,7 +685,7 @@ const searchMatrix = (matrix, target) => {
 
 //------------------------------
 
-//-======= The Exaxmple is for Stack and Queues. Very important
+//-======= The Example is for Stack and Queues. Very important
 
 // Valid Parentheses
 // let s = (x = y: [1,2,3])

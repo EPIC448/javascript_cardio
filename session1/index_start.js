@@ -115,6 +115,7 @@ console.log(capitalizeLetters("i love Bodybuilding so much"))
 // ex. maxCharacter('javascript') == 'a'
 function maxCharacter(str) {
    // make a charter map =>   f:1, u:1, n:2, y:1
+  // Helper method.
   let emptyObj = {};
   for (const char of str) {
     // Note make sure to use "OF"...
