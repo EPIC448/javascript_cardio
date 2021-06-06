@@ -1,5 +1,5 @@
 
-//new javascript node test
+//new javascript node test//  working
  let num = 20_4334_2323
  
 let stringReplace = "here the wild things are"
