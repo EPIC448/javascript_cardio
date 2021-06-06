@@ -102,7 +102,7 @@ const getUser = (user) => {
     */
 
     // Use Nouns for className
-class Car = {
+class Car {
     //...... Class is always Upper case  or PascalCase (i.e CarGreen). 
 }
     
